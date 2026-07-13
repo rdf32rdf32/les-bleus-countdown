@@ -1,2 +1,2 @@
-Les Bleus Countdown – France edition
-GitHub Pages-ready package with 20 files and a 200-question France quiz.
+LES BLEUS COUNTDOWN - COMPLETE WEBSITE FILES
+Open index.html locally or upload every file and folder to the root of the separate les-bleus-countdown repository.

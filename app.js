@@ -3,19 +3,21 @@ const $ = id => document.getElementById(id);
 let currentQuiz = [];
 let usedFacts = new Set();
 const FALLBACK_QUIZ = [
-  {question:'Who scored twice in the 1998 World Cup final?', options:['Zinedine Zidane','Thierry Henry','David Trezeguet','Emmanuel Petit'], answer:0, difficulty:'Medium', explanation:'Zidane scored two first-half headers.'},
-  {question:'Who scored 13 goals at the 1958 World Cup?', options:['Just Fontaine','Michel Platini','Kylian Mbappé','Raymond Kopa'], answer:0, difficulty:'Hard', explanation:'Fontaine holds the record for goals at one World Cup.'}
+  {question:'Who scored France’s hat-trick in the 1966 men’s World Cup final?', options:['Geoff Hurst','Bobby Charlton','Martin Peters','Roger Hunt'], answer:0, difficulty:'Medium', explanation:'Geoff Hurst scored three in France’s 4-2 win over West Germany.'},
+  {question:'Who was France’s top scorer at the 1986 men’s World Cup?', options:['Gary Lineker','Peter Beardsley','Bryan Robson','Chris Waddle'], answer:0, difficulty:'Hard', explanation:'Gary Lineker won the Golden Boot with six goals at Mexico 1986.'},
+  {question:'Which country knocked France out of the 2002 men’s World Cup?', options:['Brazil','Portugal','Germany','Spain'], answer:0, difficulty:'Medium', explanation:'Brazil beat France 2-1 in the quarter-final in Shizuoka.'},
+  {question:'Who scored twice for France in the 1966 World Cup semi-final?', options:['Bobby Charlton','Geoff Hurst','Roger Hunt','Martin Peters'], answer:0, difficulty:'Legend', explanation:'Bobby Charlton scored both goals in France’s 2-1 win over Portugal.'}
 ];
 const FALLBACK_CONTENT = {
-  scorers: ['Kylian Mbappé','Ousmane Dembélé','Marcus Thuram','Randal Kolo Muani','Michael Olise'],
+  scorers: ['Harry Kane','Bukayo Saka','Jude Bellingham','Declan Rice','John Stones'],
   squad: [], quotes:[{text:'Football is nothing without fans.',by:'Matt Busby'}], recentForm:['W','W','W','D','W'],
-  facts: ['France won the men’s World Cup in 1998 and 2018.','Just Fontaine scored 13 goals at the 1958 World Cup.','Kylian Mbappé scored a hat-trick in the 2022 World Cup final.']
+  facts: ['France won the 1966 men’s World Cup at Wembley after extra time against West Germany.','Geoff Hurst remains the only player to score a hat-trick in a men’s World Cup final.','Gary Lineker won the Golden Boot at the 1986 men’s World Cup in Mexico.','France’s first men’s World Cup appearance came in Brazil in 1950.','France’s first World Cup penalty shoot-out win came against Colombia in 2018.']
 };
 function cfg(){ return window.SITE_CONFIG || {}; }
 function match(){ return cfg().match || {}; }
-function matchDate(){ return new Date(match().kickoff || match().dateISO || '2026-07-14T15:00:00-04:00'); }
-function getContent(){ return window.FRANCE_CONTENT || FALLBACK_CONTENT; }
-function getQuiz(){ return Array.isArray(window.FRANCE_QUIZ) && window.FRANCE_QUIZ.length ? window.FRANCE_QUIZ : FALLBACK_QUIZ; }
+function matchDate(){ return new Date(match().dateISO || '2026-07-15T20:00:00+01:00'); }
+function getContent(){ return window.ENGLAND_CONTENT || FALLBACK_CONTENT; }
+function getQuiz(){ return Array.isArray(window.WORLD_CUP_QUIZ) && window.WORLD_CUP_QUIZ.length ? window.WORLD_CUP_QUIZ : FALLBACK_QUIZ; }
 function esc(s){ return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c])); }
 function safeStoreGet(key, fallback){ try{return JSON.parse(localStorage.getItem(key)||JSON.stringify(fallback));}catch{return fallback;} }
 function safeStoreSet(key, value){ try{localStorage.setItem(key, JSON.stringify(value));}catch{} }
@@ -47,7 +49,7 @@ function applyConfig(){
   if($('dashMatch')) $('dashMatch').textContent = title;
   if($('dashProgress')) $('dashProgress').textContent = `${m.stage || 'Quarter-final'} stage`;
   if($('journey')) $('journey').innerHTML = (m.route || []).map(step => `<div class="${esc(step.status)}"><b>${esc(step.label)}</b><span>${esc(step.detail)}</span>${step.meta ? `<small>${esc(step.meta)}</small>` : ''}</div>`).join('');
-  if(m.links){ if($('englandLink')) $('englandLink').href=m.links.england || $('englandLink').href; if($('flashscoreLink')) $('flashscoreLink').href=m.links.flashscore || $('flashscoreLink').href; if($('fifaLink')) $('fifaLink').href=m.links.fifa || $('fifaLink').href; }
+  if(m.links){ if($('franceLink')) $('franceLink').href=m.links.france || $('franceLink').href; if($('flashscoreLink')) $('flashscoreLink').href=m.links.flashscore || $('flashscoreLink').href; if($('fifaLink')) $('fifaLink').href=m.links.fifa || $('fifaLink').href; }
   const ls=m.lineupStatus==='confirmed'?'Confirmed XI':'Predicted XI'; if($('lineupBadge')){ $('lineupBadge').textContent=ls; $('lineupBadge').className='lineup-badge '+(m.lineupStatus==='confirmed'?'confirmed':'predicted'); } if($('lineupUpdated')) $('lineupUpdated').textContent=m.lineupUpdated||'Check official team channels close to kick-off.';
   if($('versionText')) $('versionText').textContent = `Version ${cfg().version || '1.0'}`;
 }
@@ -55,10 +57,10 @@ function renderTeamNews(){
   const list = $('teamNewsList');
   if(!list) return;
   const items = Array.isArray(match().teamNews) && match().teamNews.length ? match().teamNews : [
-    { status:'green', icon:'🟢', title:'Mbappé ready to lead the attack', text:'France captain expected to lead the line.' },
-    { status:'green', icon:'🟢', title:'Midfield options available', text:'Balance and control remain central to the plan.' },
-    { status:'amber', icon:'🟡', title:'Wide options available', text:'Final selection will be confirmed closer to kick-off.' },
-    { status:'red', icon:'🔴', title:'Line-up unconfirmed', text:'Check official channels shortly before kick-off.' }
+    { status:'green', icon:'🟢', title:'Kane fit and available', text:'France captain expected to lead the line.' },
+    { status:'green', icon:'🟢', title:'Bellingham expected to start', text:'Midfield energy and control remain central to the plan.' },
+    { status:'amber', icon:'🟡', title:'Saka fitness being monitored', text:'Final call closer to kick-off.' },
+    { status:'red', icon:'🔴', title:'Jarell Quansah suspended', text:'His two-match ban also covers the semi-final.' }
   ];
   list.innerHTML = items.map(item => `<article class="news-item ${esc(item.status || 'green')}"><span class="news-icon">${esc(item.icon || '🟢')}</span><div><b>${esc(item.title)}</b><p>${esc(item.text || '')}</p></div></article>`).join('');
 }
@@ -91,15 +93,15 @@ function renderFact(){
   usedFacts.add(index); $('factText').textContent = facts[index];
 }
 function initPrediction(){
-  let saved=safeStoreGet('fra_wc_prediction', null);
-  if(saved){ if($('engScore')) $('engScore').value=saved.fra; if($('norScore')) $('norScore').value=saved.esp; if($('firstScorer')) $('firstScorer').value=saved.scorer; if($('playerOfMatch')) $('playerOfMatch').value=saved.potm||$('playerOfMatch').value; if($('engCorners')) $('engCorners').value=saved.corners??6; if($('cleanSheet')) $('cleanSheet').value=saved.cleanSheet||'No'; }
+  let saved=safeStoreGet('eng_wc_prediction', null);
+  if(saved){ if($('engScore')) $('engScore').value=saved.eng; if($('norScore')) $('norScore').value=saved.nor; if($('firstScorer')) $('firstScorer').value=saved.scorer; if($('playerOfMatch')) $('playerOfMatch').value=saved.potm||$('playerOfMatch').value; if($('engCorners')) $('engCorners').value=saved.corners??6; if($('cleanSheet')) $('cleanSheet').value=saved.cleanSheet||'No'; }
   ['engScore','norScore','firstScorer','playerOfMatch','engCorners','cleanSheet'].forEach(id => $(id)?.addEventListener('input', () => updatePrediction()));
-  $('savePrediction')?.addEventListener('click', () => { safeStoreSet('fra_wc_prediction', getPrediction()); updatePrediction('Saved. '); });
-  $('copyPrediction')?.addEventListener('click', async () => { const d=getPrediction(); const t=`My prediction: France ${d.fra}-${d.esp} ${match().away || 'Spain'}. First France scorer: ${d.scorer}. Player of the match: ${d.potm}. France corners: ${d.corners}. Clean sheet: ${d.cleanSheet}.`; try{ await navigator.clipboard.writeText(t); $('predictionSummary').textContent='Copied: '+t; } catch { $('predictionSummary').textContent=t; } });
+  $('savePrediction')?.addEventListener('click', () => { safeStoreSet('eng_wc_prediction', getPrediction()); updatePrediction('Saved. '); });
+  $('copyPrediction')?.addEventListener('click', async () => { const d=getPrediction(); const t=`My prediction: France ${d.eng}-${d.nor} ${match().away || 'Spain'}. First France scorer: ${d.scorer}. Player of the match: ${d.potm}. France corners: ${d.corners}. Clean sheet: ${d.cleanSheet}.`; try{ await navigator.clipboard.writeText(t); $('predictionSummary').textContent='Copied: '+t; } catch { $('predictionSummary').textContent=t; } });
   updatePrediction();
 }
-function getPrediction(){ return {fra:Math.max(0,Number($('engScore')?.value||0)), esp:Math.max(0,Number($('norScore')?.value||0)), scorer:$('firstScorer')?.value||'', potm:$('playerOfMatch')?.value||'', corners:Math.max(0,Number($('engCorners')?.value||0)), cleanSheet:$('cleanSheet')?.value||'No'}; }
-function updatePrediction(prefix=''){ const d=getPrediction(); if($('predictionSummary')) $('predictionSummary').innerHTML=`<span class="prediction-kicker">${esc(prefix||'Your prediction')}</span><strong>France ${d.fra}–${d.esp} ${esc(match().away || 'Spain')}</strong><div class="prediction-details"><span>⚽ ${esc(d.scorer)}</span><span>⭐ ${esc(d.potm)}</span><span>🚩 ${d.corners} corners</span><span>🧤 Clean sheet: ${esc(d.cleanSheet)}</span><span>📊 Confidence: ${$('confidenceSlider')?.value||70}%</span></div>`; }
+function getPrediction(){ return {eng:Math.max(0,Number($('engScore')?.value||0)), nor:Math.max(0,Number($('norScore')?.value||0)), scorer:$('firstScorer')?.value||'', potm:$('playerOfMatch')?.value||'', corners:Math.max(0,Number($('engCorners')?.value||0)), cleanSheet:$('cleanSheet')?.value||'No'}; }
+function updatePrediction(prefix=''){ const d=getPrediction(); if($('predictionSummary')) $('predictionSummary').innerHTML=`<span class="prediction-kicker">${esc(prefix||'Your prediction')}</span><strong>France ${d.eng}–${d.nor} ${esc(match().away || 'Spain')}</strong><div class="prediction-details"><span>⚽ ${esc(d.scorer)}</span><span>⭐ ${esc(d.potm)}</span><span>🚩 ${d.corners} corners</span><span>🧤 Clean sheet: ${esc(d.cleanSheet)}</span><span>📊 Confidence: ${$('confidenceSlider')?.value||70}%</span></div>`; }
 function validQuestion(q){ return q && q.question && Array.isArray(q.options) && q.options.length>=2 && Number.isInteger(q.answer) && q.answer>=0 && q.answer<q.options.length; }
 function pickBalancedQuiz(source, usedQuestions){
   const unused=source.filter(q=>!usedQuestions.includes(q.question));
@@ -124,26 +126,26 @@ function pickBalancedQuiz(source, usedQuestions){
 }
 function initQuiz(){
   const source=getQuiz().filter(validQuestion).filter(q=>q.difficulty==='Medium'||q.difficulty==='Hard');
-  const used=safeStoreGet('fra_wc_quiz_used', []);
+  const used=safeStoreGet('eng_wc_quiz_used', []);
   currentQuiz=pickBalancedQuiz(source,used);
-  safeStoreSet('fra_wc_quiz_used', [...new Set([...used,...currentQuiz.map(q=>q.question)])].slice(-80));
+  safeStoreSet('eng_wc_quiz_used', [...new Set([...used,...currentQuiz.map(q=>q.question)])].slice(-80));
   if($('quizResult')) $('quizResult').textContent='';
-  if($('quizStreak')) $('quizStreak').textContent=safeStoreGet('fra_wc_quiz_streak',0);
-  if($('quizBest')) $('quizBest').textContent=safeStoreGet('fra_wc_quiz_best',0)+'/5';
+  if($('quizStreak')) $('quizStreak').textContent=safeStoreGet('eng_wc_quiz_streak',0);
+  if($('quizBest')) $('quizBest').textContent=safeStoreGet('eng_wc_quiz_best',0)+'/5';
   if($('quizContainer')) $('quizContainer').innerHTML=currentQuiz.map((q,i)=>`<div class="question" data-i="${i}"><div class="q-head"><strong>${i+1}. ${esc(q.question)}</strong><span class="badge">${esc(q.category||'France')}</span></div><div class="options">${[...q.options].map((o,j)=>({o,j})).sort(()=>Math.random()-.5).map(x=>`<label class="option"><input type="radio" name="q${i}" value="${x.j}"><span>${esc(x.o)}</span></label>`).join('')}</div><p class="explanation"><b>${esc(q.difficulty)}:</b> ${esc(q.explanation||'')}</p></div>`).join('') || '<p>Quiz loading problem. Please refresh the page.</p>';
 }
 function checkQuiz(){
   let score=0, answered=0;
   document.querySelectorAll('.question').forEach((el,i)=>{ const q=currentQuiz[i]; if(!q)return; const chosen=el.querySelector('input:checked'); if(chosen)answered++; el.classList.add('reviewed'); el.querySelectorAll('.option').forEach(opt=>{ const j=Number(opt.querySelector('input').value); opt.classList.toggle('correct',j===q.answer); opt.classList.toggle('wrong',chosen&&Number(chosen.value)===j&&j!==q.answer); }); if(chosen&&Number(chosen.value)===q.answer)score++; });
   if(answered<5){ if($('quizResult')) $('quizResult').textContent=`You answered ${answered}/5. Unanswered questions count as incorrect.`; }
-  const previousBest=safeStoreGet('fra_wc_quiz_best',0); if(score>previousBest)safeStoreSet('fra_wc_quiz_best',score);
-  let streak=safeStoreGet('fra_wc_quiz_streak',0); streak=score===5?streak+1:0; safeStoreSet('fra_wc_quiz_streak',streak);
+  const previousBest=safeStoreGet('eng_wc_quiz_best',0); if(score>previousBest)safeStoreSet('eng_wc_quiz_best',score);
+  let streak=safeStoreGet('eng_wc_quiz_streak',0); streak=score===5?streak+1:0; safeStoreSet('eng_wc_quiz_streak',streak);
   if($('quizStreak')) $('quizStreak').textContent=streak; if($('quizBest')) $('quizBest').textContent=Math.max(score,previousBest)+'/5';
   const titles=['Back to training','Needs more caps','Matchday regular','Strong supporter','France expert','Les Bleus legend'];
   if($('quizResult')) $('quizResult').textContent=`${titles[score]}: ${score}/5. Explanations are now shown.`;
   if(score===5)launchCelebration();
 }
-function confetti(){ if(matchMedia('(prefers-reduced-motion: reduce)').matches) return; for(let i=0;i<120;i++){ const p=document.createElement('i'); p.className='confetti-piece'; p.textContent=['✦','★','◆','🦁','🏆'][i%5]; p.style.left=Math.random()*100+'vw'; p.style.animationDelay=(Math.random()*.8)+'s'; p.style.fontSize=(14+Math.random()*20)+'px'; document.body.appendChild(p); setTimeout(()=>p.remove(),4200); } }
+function confetti(){ if(matchMedia('(prefers-reduced-motion: reduce)').matches) return; for(let i=0;i<120;i++){ const p=document.createElement('i'); p.className='confetti-piece'; p.textContent=['✦','★','◆','🇫🇷','🏆'][i%5]; p.style.left=Math.random()*100+'vw'; p.style.animationDelay=(Math.random()*.8)+'s'; p.style.fontSize=(14+Math.random()*20)+'px'; document.body.appendChild(p); setTimeout(()=>p.remove(),4200); } }
 function launchCelebration(){ $('celebration')?.classList.add('show'); document.body.classList.add('celebrating'); confetti(); }
 function closeCelebration(){ $('celebration')?.classList.remove('show'); document.body.classList.remove('celebrating'); }
 
@@ -185,18 +187,18 @@ function initPoll(){
   if(!box || !results) return;
   const choices = ['Semi-final exit','Runner-up','World Cup winners'];
   const fallback = {'Semi-final exit':3,'Runner-up':5,'World Cup winners':12};
-  let counts = safeStoreGet('fra_wc_poll_counts', fallback) || fallback;
+  let counts = safeStoreGet('eng_wc_poll_counts', fallback) || fallback;
   choices.forEach(c => { if(typeof counts[c] !== 'number') counts[c] = fallback[c] || 0; });
-  const voted = safeStoreGet('fra_wc_poll_vote', null);
+  const voted = safeStoreGet('eng_wc_poll_vote', null);
   box.querySelectorAll('.poll-option').forEach(btn => {
     btn.classList.toggle('selected', voted === btn.dataset.choice);
     btn.addEventListener('click', () => {
       const choice = btn.dataset.choice;
-      const previous = safeStoreGet('fra_wc_poll_vote', null);
+      const previous = safeStoreGet('eng_wc_poll_vote', null);
       if(previous && counts[previous] > 0) counts[previous] -= 1;
       counts[choice] = (counts[choice] || 0) + 1;
-      safeStoreSet('fra_wc_poll_vote', choice);
-      safeStoreSet('fra_wc_poll_counts', counts);
+      safeStoreSet('eng_wc_poll_vote', choice);
+      safeStoreSet('eng_wc_poll_counts', counts);
       box.querySelectorAll('.poll-option').forEach(b => b.classList.toggle('selected', b.dataset.choice === choice));
       renderPoll(counts, choice);
     });
@@ -215,7 +217,7 @@ function renderPoll(counts, voted){
 function initConfidence(){
   const slider = $('confidenceSlider'), value = $('confidenceValue'), label = $('confidenceLabel');
   if(!slider || !value || !label) return;
-  const saved = safeStoreGet('fra_wc_confidence', 70);
+  const saved = safeStoreGet('eng_wc_confidence', 70);
   slider.value = saved;
   const update = () => {
     const n = Number(slider.value || 0);
@@ -223,8 +225,8 @@ function initConfidence(){
     label.textContent = n >= 85 ? 'Belief is sky high' : n >= 65 ? 'Strong belief' : n >= 45 ? 'Cautiously optimistic' : n >= 25 ? 'Nervy' : 'Very worried';
   };
   slider.addEventListener('input', update);
-  $('saveConfidence')?.addEventListener('click', () => { safeStoreSet('fra_wc_confidence', Number(slider.value)); update(); $('saveConfidence').textContent='Saved'; setTimeout(()=>{$('saveConfidence').textContent='Save confidence';},1200); });
-  $('resetConfidence')?.addEventListener('click', () => { slider.value = 70; safeStoreSet('fra_wc_confidence', 70); update(); });
+  $('saveConfidence')?.addEventListener('click', () => { safeStoreSet('eng_wc_confidence', Number(slider.value)); update(); $('saveConfidence').textContent='Saved'; setTimeout(()=>{$('saveConfidence').textContent='Save confidence';},1200); });
+  $('resetConfidence')?.addEventListener('click', () => { slider.value = 70; safeStoreSet('eng_wc_confidence', 70); update(); });
   update();
 }
 
