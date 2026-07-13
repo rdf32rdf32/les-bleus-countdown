@@ -93,10 +93,10 @@ function renderFact(){
   usedFacts.add(index); $('factText').textContent = facts[index];
 }
 function initPrediction(){
-  let saved=safeStoreGet('eng_wc_prediction', null);
+  let saved=safeStoreGet('fr_wc_prediction', null);
   if(saved){ if($('engScore')) $('engScore').value=saved.eng; if($('norScore')) $('norScore').value=saved.nor; if($('firstScorer')) $('firstScorer').value=saved.scorer; if($('playerOfMatch')) $('playerOfMatch').value=saved.potm||$('playerOfMatch').value; if($('engCorners')) $('engCorners').value=saved.corners??6; if($('cleanSheet')) $('cleanSheet').value=saved.cleanSheet||'No'; }
   ['engScore','norScore','firstScorer','playerOfMatch','engCorners','cleanSheet'].forEach(id => $(id)?.addEventListener('input', () => updatePrediction()));
-  $('savePrediction')?.addEventListener('click', () => { safeStoreSet('eng_wc_prediction', getPrediction()); updatePrediction('Saved. '); });
+  $('savePrediction')?.addEventListener('click', () => { safeStoreSet('fr_wc_prediction', getPrediction()); updatePrediction('Saved. '); });
   $('copyPrediction')?.addEventListener('click', async () => { const d=getPrediction(); const t=`My prediction: France ${d.eng}-${d.nor} ${match().away || 'Spain'}. First France scorer: ${d.scorer}. Player of the match: ${d.potm}. France corners: ${d.corners}. Clean sheet: ${d.cleanSheet}.`; try{ await navigator.clipboard.writeText(t); $('predictionSummary').textContent='Copied: '+t; } catch { $('predictionSummary').textContent=t; } });
   updatePrediction();
 }
@@ -126,20 +126,20 @@ function pickBalancedQuiz(source, usedQuestions){
 }
 function initQuiz(){
   const source=getQuiz().filter(validQuestion).filter(q=>q.difficulty==='Medium'||q.difficulty==='Hard');
-  const used=safeStoreGet('eng_wc_quiz_used', []);
+  const used=safeStoreGet('fr_wc_quiz_used', []);
   currentQuiz=pickBalancedQuiz(source,used);
-  safeStoreSet('eng_wc_quiz_used', [...new Set([...used,...currentQuiz.map(q=>q.question)])].slice(-80));
+  safeStoreSet('fr_wc_quiz_used', [...new Set([...used,...currentQuiz.map(q=>q.question)])].slice(-80));
   if($('quizResult')) $('quizResult').textContent='';
-  if($('quizStreak')) $('quizStreak').textContent=safeStoreGet('eng_wc_quiz_streak',0);
-  if($('quizBest')) $('quizBest').textContent=safeStoreGet('eng_wc_quiz_best',0)+'/5';
+  if($('quizStreak')) $('quizStreak').textContent=safeStoreGet('fr_wc_quiz_streak',0);
+  if($('quizBest')) $('quizBest').textContent=safeStoreGet('fr_wc_quiz_best',0)+'/5';
   if($('quizContainer')) $('quizContainer').innerHTML=currentQuiz.map((q,i)=>`<div class="question" data-i="${i}"><div class="q-head"><strong>${i+1}. ${esc(q.question)}</strong><span class="badge">${esc(q.category||'France')}</span></div><div class="options">${[...q.options].map((o,j)=>({o,j})).sort(()=>Math.random()-.5).map(x=>`<label class="option"><input type="radio" name="q${i}" value="${x.j}"><span>${esc(x.o)}</span></label>`).join('')}</div><p class="explanation"><b>${esc(q.difficulty)}:</b> ${esc(q.explanation||'')}</p></div>`).join('') || '<p>Quiz loading problem. Please refresh the page.</p>';
 }
 function checkQuiz(){
   let score=0, answered=0;
   document.querySelectorAll('.question').forEach((el,i)=>{ const q=currentQuiz[i]; if(!q)return; const chosen=el.querySelector('input:checked'); if(chosen)answered++; el.classList.add('reviewed'); el.querySelectorAll('.option').forEach(opt=>{ const j=Number(opt.querySelector('input').value); opt.classList.toggle('correct',j===q.answer); opt.classList.toggle('wrong',chosen&&Number(chosen.value)===j&&j!==q.answer); }); if(chosen&&Number(chosen.value)===q.answer)score++; });
   if(answered<5){ if($('quizResult')) $('quizResult').textContent=`You answered ${answered}/5. Unanswered questions count as incorrect.`; }
-  const previousBest=safeStoreGet('eng_wc_quiz_best',0); if(score>previousBest)safeStoreSet('eng_wc_quiz_best',score);
-  let streak=safeStoreGet('eng_wc_quiz_streak',0); streak=score===5?streak+1:0; safeStoreSet('eng_wc_quiz_streak',streak);
+  const previousBest=safeStoreGet('fr_wc_quiz_best',0); if(score>previousBest)safeStoreSet('fr_wc_quiz_best',score);
+  let streak=safeStoreGet('fr_wc_quiz_streak',0); streak=score===5?streak+1:0; safeStoreSet('fr_wc_quiz_streak',streak);
   if($('quizStreak')) $('quizStreak').textContent=streak; if($('quizBest')) $('quizBest').textContent=Math.max(score,previousBest)+'/5';
   const titles=['Back to training','Needs more caps','Matchday regular','Strong supporter','France expert','Les Bleus legend'];
   if($('quizResult')) $('quizResult').textContent=`${titles[score]}: ${score}/5. Explanations are now shown.`;
@@ -187,18 +187,18 @@ function initPoll(){
   if(!box || !results) return;
   const choices = ['Semi-final exit','Runner-up','World Cup winners'];
   const fallback = {'Semi-final exit':3,'Runner-up':5,'World Cup winners':12};
-  let counts = safeStoreGet('eng_wc_poll_counts', fallback) || fallback;
+  let counts = safeStoreGet('fr_wc_poll_counts', fallback) || fallback;
   choices.forEach(c => { if(typeof counts[c] !== 'number') counts[c] = fallback[c] || 0; });
-  const voted = safeStoreGet('eng_wc_poll_vote', null);
+  const voted = safeStoreGet('fr_wc_poll_vote', null);
   box.querySelectorAll('.poll-option').forEach(btn => {
     btn.classList.toggle('selected', voted === btn.dataset.choice);
     btn.addEventListener('click', () => {
       const choice = btn.dataset.choice;
-      const previous = safeStoreGet('eng_wc_poll_vote', null);
+      const previous = safeStoreGet('fr_wc_poll_vote', null);
       if(previous && counts[previous] > 0) counts[previous] -= 1;
       counts[choice] = (counts[choice] || 0) + 1;
-      safeStoreSet('eng_wc_poll_vote', choice);
-      safeStoreSet('eng_wc_poll_counts', counts);
+      safeStoreSet('fr_wc_poll_vote', choice);
+      safeStoreSet('fr_wc_poll_counts', counts);
       box.querySelectorAll('.poll-option').forEach(b => b.classList.toggle('selected', b.dataset.choice === choice));
       renderPoll(counts, choice);
     });
@@ -217,7 +217,7 @@ function renderPoll(counts, voted){
 function initConfidence(){
   const slider = $('confidenceSlider'), value = $('confidenceValue'), label = $('confidenceLabel');
   if(!slider || !value || !label) return;
-  const saved = safeStoreGet('eng_wc_confidence', 70);
+  const saved = safeStoreGet('fr_wc_confidence', 70);
   slider.value = saved;
   const update = () => {
     const n = Number(slider.value || 0);
@@ -225,8 +225,8 @@ function initConfidence(){
     label.textContent = n >= 85 ? 'Belief is sky high' : n >= 65 ? 'Strong belief' : n >= 45 ? 'Cautiously optimistic' : n >= 25 ? 'Nervy' : 'Very worried';
   };
   slider.addEventListener('input', update);
-  $('saveConfidence')?.addEventListener('click', () => { safeStoreSet('eng_wc_confidence', Number(slider.value)); update(); $('saveConfidence').textContent='Saved'; setTimeout(()=>{$('saveConfidence').textContent='Save confidence';},1200); });
-  $('resetConfidence')?.addEventListener('click', () => { slider.value = 70; safeStoreSet('eng_wc_confidence', 70); update(); });
+  $('saveConfidence')?.addEventListener('click', () => { safeStoreSet('fr_wc_confidence', Number(slider.value)); update(); $('saveConfidence').textContent='Saved'; setTimeout(()=>{$('saveConfidence').textContent='Save confidence';},1200); });
+  $('resetConfidence')?.addEventListener('click', () => { slider.value = 70; safeStoreSet('fr_wc_confidence', 70); update(); });
   update();
 }
 
@@ -264,5 +264,5 @@ async function loadWeather(){
     const d=await res.json(), x=d.daily||{}, code=(x.weather_code||[])[0];
     const labels={0:'Clear',1:'Mainly clear',2:'Partly cloudy',3:'Overcast',45:'Foggy',51:'Light drizzle',61:'Rain',63:'Moderate rain',65:'Heavy rain',80:'Rain showers',95:'Thunderstorms'};
     box.innerHTML=`<div class="weather-main"><strong>${esc(labels[code]||'Forecast available')}</strong><span>${Math.round((x.temperature_2m_max||[])[0])}°C high</span></div><div class="weather-stats"><span>Low <b>${Math.round((x.temperature_2m_min||[])[0])}°C</b></span><span>Rain <b>${Math.round((x.precipitation_probability_max||[])[0])}%</b></span><span>Wind <b>${Math.round((x.wind_speed_10m_max||[])[0])} km/h</b></span></div><small>Forecast for ${esc(w.label||match().venue||'the stadium')}. Weather can change.</small>`;
-  }catch(e){box.innerHTML='<p>Live weather is temporarily unavailable.</p><a class="button-link" target="_blank" rel="noopener" href="https://www.weather.gov/ffc/">Check weather</a>';}
+  }catch(e){box.innerHTML='<p>Live weather is temporarily unavailable.</p><a class="button-link" target="_blank" rel="noopener" href="https://www.weather.gov/fwd/">Check weather</a>';}
 }

@@ -23,7 +23,7 @@
     <nav class="topbar" aria-label="Main navigation">
       <a class="brand" href="#top">🇫🇷 <span>Les Bleus Countdown</span></a>
       <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
-      <div class="nav-links" id="navLinks">
+      <div class="nav-links" id="navLinks"><button id="languageToggle" class="language-toggle" type="button" aria-label="Switch language">FR</button>
         <a href="#road">Road</a>
         <a href="#team-news">Team News</a>
         <a href="#quiz">Quiz</a>
@@ -40,8 +40,8 @@
         <p class="lead">Countdown, team news, predictions, quiz and France’s route to the final.</p>
         <div class="meta-row" aria-label="Match information">
           <span id="metaCompetition">⚽ World Cup semi-final</span>
-          <span id="metaDate">📅 15 July 2026</span>
-          <span id="metaVenue">🏟️ Atlanta</span>
+          <span id="metaDate">📅 14 July 2026</span>
+          <span id="metaVenue">🏟️ Dallas Stadium, Arlington</span>
         </div>
       </section>
       <aside class="countdown-card" aria-label="Countdown to kick-off">
@@ -71,9 +71,22 @@
       </article>
       <article class="mini-card">
         <p class="eyebrow">🕒 Kick-off times</p><h2>Match time</h2>
-        <div class="time-list"><span><b>Your local time</b><strong id="localTimeExtra">Detecting…</strong></span><span><b>United Kingdom</b>20:00</span><span><b>Belgium</b>21:00</span><span><b>Atlanta</b>15:00</span></div>
+        <div class="time-list"><span><b>Your local time</b><strong id="localTimeExtra">Detecting…</strong></span><span><b>United Kingdom</b>20:00</span><span><b>Belgium</b>21:00</span><span><b>Dallas / Arlington</b>14:00</span></div>
       </article>
     </section>
+
+
+    <section class="bastille-banner reveal" id="bastille"><span class="tricolour-ribbon" aria-hidden="true"></span><div><p class="eyebrow">14 July special</p><h2>Bastille Day semi-final</h2><p>France face Spain on the national day. Allez les Bleus!</p></div><div class="animated-shirt" aria-label="Animated France shirt"><span>10</span></div><div class="waving-flag" aria-label="Animated French flag"><i></i><i></i><i></i></div></section>
+
+    <section class="card reveal" id="history"><div class="section-head"><p class="eyebrow">French football history</p><h2>Two stars, unforgettable moments</h2><p>France’s landmark World Cup achievements.</p></div><div class="history-timeline"><article><b>1998</b><span>World champions on home soil</span><p>France beat Brazil 3–0 in the final in Saint-Denis.</p></article><article><b>2006</b><span>World Cup finalists</span><p>Les Bleus reached the final in Germany.</p></article><article><b>2018</b><span>World champions in Russia</span><p>France beat Croatia 4–2 to lift their second World Cup.</p></article><article><b>2022</b><span>Finalists again</span><p>France reached a second consecutive final.</p></article></div></section>
+
+    <section class="feature-grid reveal" id="scorers-tv"><article class="mini-card"><p class="eyebrow">Golden Boot tracker</p><h2>France top scorers</h2><div class="scorer-table"><span><b>Kylian Mbappé</b><strong>7 goals</strong></span><span><b>Ousmane Dembélé</b><strong>3 goals</strong></span><span><b>Michael Olise</b><strong>2 goals</strong></span></div><small>Update these figures in index.html as the tournament progresses.</small></article><article class="mini-card"><p class="eyebrow">Watch in France</p><h2>French TV information</h2><p>The match is available through official French World Cup broadcasters. Check the programme guide shortly before kick-off.</p><div class="cta-row"><a href="https://www.m6.fr/" target="_blank" rel="noopener">M6</a><a class="secondary" href="https://www.beinsports.com/fr-fr" target="_blank" rel="noopener">beIN SPORTS</a></div></article></section>
+
+    <section class="card reveal" id="fan-message"><div class="section-head"><p class="eyebrow">Support Les Bleus</p><h2>Allez les Bleus message generator</h2><p>Create a short matchday message to copy and share.</p></div><div id="fanMessage" class="generated-message">Allez les Bleus! Toute la France est derrière vous.</div><div class="button-row"><button id="generateMessage">New message</button><button id="copyMessage" class="ghost">Copy message</button></div></section>
+
+    <section class="card reveal" id="comparison"><div class="section-head"><p class="eyebrow">Player comparison</p><h2>Mbappé v Lamine Yamal</h2><p>Two match-winners, two different styles.</p></div><div class="comparison-grid"><article><h3>Kylian Mbappé</h3><span>France · Forward · 27</span><dl><div><dt>Tournament goals</dt><dd>7</dd></div><div><dt>Strength</dt><dd>Pace and finishing</dd></div><div><dt>World Cup titles</dt><dd>1</dd></div></dl></article><div class="versus">VS</div><article><h3>Lamine Yamal</h3><span>Spain · Winger · 19</span><dl><div><dt>Tournament goals</dt><dd>3</dd></div><div><dt>Strength</dt><dd>Creativity and dribbling</dd></div><div><dt>World Cup titles</dt><dd>0</dd></div></dl></article></div></section>
+
+    <section class="card reveal" id="share-card"><div class="section-head"><p class="eyebrow">Share your prediction</p><h2>Match prediction card</h2><p>Generate a clean card for WhatsApp or social media.</p></div><div class="share-prediction-card" id="sharePredictionCard"><small>WORLD CUP SEMI-FINAL · 14 JULY 2026</small><h3>FRANCE <span id="cardFranceScore">2</span>–<span id="cardSpainScore">1</span> SPAIN</h3><p id="cardScorer">First France scorer: Kylian Mbappé</p><b>ALLEZ LES BLEUS 🇫🇷</b></div><div class="button-row"><button id="updateShareCard">Update from predictor</button><button id="downloadShareCard" class="ghost">Download card</button></div></section>
 
     <section class="card road reveal" id="road">
       <div class="section-head"><p class="eyebrow">Tournament path</p><h2>France’s Road to the Final</h2><p>Follow France’s men through the World Cup knockout route.</p></div>
@@ -141,7 +154,7 @@
 
     <section class="two-card-row reveal" aria-label="Fan extras">
       <article class="mini-card quote-card"><p class="eyebrow">💬 Matchday quote</p><blockquote id="matchQuote">“Football is nothing without fans.”</blockquote><p id="quoteAttribution" class="quote-attribution">— Matt Busby</p><button id="newQuote" class="ghost small-btn">Another quote</button></article>
-      <article class="mini-card celebration-mode"><p class="eyebrow">🎉 Celebration mode</p><h2>France win?</h2><p>Launch a full-screen silent stadium celebration.</p><button id="winConfetti">Celebrate an France win</button></article>
+      <article class="mini-card celebration-mode"><p class="eyebrow">🎉 Celebration mode</p><h2>France win?</h2><p>Launch a full-screen silent stadium celebration.</p><button id="winConfetti">Celebrate a France win</button></article>
     </section>
 
   </main>
@@ -151,7 +164,7 @@
     <section class="feature-grid reveal" id="live-info" aria-label="Live match information">
       <article class="mini-card weather-card">
         <p class="eyebrow">🌤 Stadium weather</p>
-        <h2 id="weatherTitle">Atlanta match weather</h2>
+        <h2 id="weatherTitle">Dallas match weather</h2>
         <div id="weatherPanel" class="weather-panel" aria-live="polite"><p>Loading match-day weather…</p></div>
       </article>
       <article class="mini-card fixtures-card">
@@ -164,9 +177,9 @@
       <article class="mini-card simple-route-card">
         <div class="section-head"><p class="eyebrow">🏆 France’s route</p><h2>Two wins from history</h2><p>A simple path from the quarter-final victory to the World Cup final.</p></div>
         <div class="simple-route">
-          <article class="route-stage done"><span class="route-icon">✓</span><div><small>Quarter-final · 11 July</small><b>France 2–0 Morocco</b><p>France reached the semi-final with a 2–0 win over Morocco.</p></div></article>
+          <article class="route-stage done"><span class="route-icon">✓</span><div><small>Quarter-final · 9 July</small><b>France 2–0 Morocco</b><p>France reached the semi-final with a 2–0 win over Morocco.</p></div></article>
           <div class="route-arrow">↓</div>
-          <article class="route-stage current"><span class="route-icon">⚔</span><div><small>Semi-final · Atlanta · 14 July</small><b>France v Spain</b><p>Kick-off 21:00 France, 15:00 local time.</p></div></article>
+          <article class="route-stage current"><span class="route-icon">⚔</span><div><small>Semi-final · Dallas/Arlington · 14 July</small><b>France v Spain</b><p>Kick-off 21:00 France, 14:00 local time.</p></div></article>
           <div class="route-arrow">↓</div>
           <article class="route-stage future"><span class="route-icon">🏆</span><div><small>Final · New York/New Jersey · 19 July</small><b>England or Argentina</b><p>France qualify by beating Spain.</p></div></article>
         </div>
@@ -183,5 +196,6 @@
   <script src="quiz-data.js"></script>
   <script src="content-data.js"></script>
   <script src="app.js" defer></script>
+  <script src="enhanced-france.js" defer></script>
 </body>
 </html>
