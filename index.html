@@ -57,6 +57,11 @@
       <article><span>⏳</span><b>Countdown</b><p id="dashCountdown">Loading...</p></article>
       <article><span>🏆</span><b>Next match</b><p id="dashMatch">France v Spain</p></article>
       <article><span>🛣️</span><b>Progress</b><p id="dashProgress">Semi-final stage</p></article>
+      <article><span>🌤️</span><b>Weather</b><p><a href="#live-info">Dallas forecast</a></p></article>
+      <article><span>📋</span><b>Team news</b><p><a href="#team-news">Predicted line-up</a></p></article>
+      <article><span>🧠</span><b>Quiz</b><p><a href="#quiz">Five fresh questions</a></p></article>
+      <article><span>🎯</span><b>Predictor</b><p><a href="#predictor">Make your prediction</a></p></article>
+      <article><span>🏟️</span><b>Stadium</b><p><a href="#stadium-profile">Dallas Stadium</a></p></article>
     </section>
 
     <section class="matchday-extras reveal" id="spotlight" aria-label="Matchday extras">
@@ -77,6 +82,13 @@
 
 
     <section class="bastille-banner reveal" id="bastille"><span class="tricolour-ribbon" aria-hidden="true"></span><div><p class="eyebrow">14 July special</p><h2>Bastille Day semi-final</h2><p>France face Spain on the national day. Allez les Bleus!</p></div><div class="animated-shirt" aria-label="Animated France shirt"><span>10</span></div><div class="waving-flag" aria-label="Animated French flag"><i></i><i></i><i></i></div></section>
+
+    <section class="feature-grid reveal premium-grid" id="team-comparison">
+      <article class="mini-card comparison-bars-card"><p class="eyebrow">⚖️ Team comparison</p><h2>France v Spain</h2><p class="small-note">Editorial indicators based on tournament form, squad balance and experience, not official ratings.</p><div class="team-bars" id="teamBars"></div></article>
+      <article class="mini-card winners-card"><p class="eyebrow">🏆 World Cup winners</p><h2>Most successful nations</h2><div class="winner-list"><span><b>🇧🇷 Brazil</b><strong>★★★★★</strong></span><span><b>🇩🇪 Germany</b><strong>★★★★</strong></span><span><b>🇮🇹 Italy</b><strong>★★★★</strong></span><span><b>🇦🇷 Argentina</b><strong>★★★</strong></span><span class="france-row"><b>🇫🇷 France</b><strong>★★</strong></span></div></article>
+    </section>
+
+    <section class="card stadium-profile reveal" id="stadium-profile"><div class="stadium-visual"><div class="stadium-glow"></div><span>🏟️</span></div><div><p class="eyebrow">📍 Stadium profile</p><h2>Dallas Stadium, Arlington</h2><p>One of North America’s largest enclosed stadiums and the venue for France’s semi-final against Spain.</p><div class="stadium-facts"><span><small>City</small><b>Arlington, Texas</b></span><span><small>Capacity</small><b>About 80,000</b></span><span><small>Opened</small><b>2009</b></span><span><small>Surface</small><b>Artificial turf</b></span></div><p class="small-note">Match details should always be checked against official tournament information.</p></div></section>
 
     <section class="card reveal" id="history"><div class="section-head"><p class="eyebrow">French football history</p><h2>Two stars, unforgettable moments</h2><p>France’s landmark World Cup achievements.</p></div><div class="history-timeline"><article><b>1998</b><span>World champions on home soil</span><p>France beat Brazil 3–0 in the final in Saint-Denis.</p></article><article><b>2006</b><span>World Cup finalists</span><p>Les Bleus reached the final in Germany.</p></article><article><b>2018</b><span>World champions in Russia</span><p>France beat Croatia 4–2 to lift their second World Cup.</p></article><article><b>2022</b><span>Finalists again</span><p>France reached a second consecutive final.</p></article></div></section>
 
@@ -145,6 +157,8 @@
         <label>Player of the match<select id="playerOfMatch"></select></label>
         <label>France corners<input id="engCorners" type="number" min="0" max="30" value="6" inputmode="numeric"></label>
         <label>France clean sheet<select id="cleanSheet"><option value="Yes">Yes</option><option value="No">No</option></select></label>
+        <label>Extra time?<select id="extraTime"><option value="No">No</option><option value="Yes">Yes</option></select></label>
+        <label>Penalty shoot-out?<select id="penalties"><option value="No">No</option><option value="Yes">Yes</option></select></label>
       </div>
       <div class="button-row"><button id="savePrediction">Save prediction</button><button id="copyPrediction" class="ghost">Copy prediction</button></div>
       <div class="summary prediction-card" id="predictionSummary" aria-live="polite">Make your prediction above.</div>
@@ -188,7 +202,7 @@
 
     <section class="card links reveal useful-links-end"><div class="section-head"><p class="eyebrow">Official and live coverage</p><h2>Useful links</h2><p>Trusted places for confirmed squads, tournament information, scores and match coverage.</p></div><div class="cta-row"><a id="franceLink" href="https://www.fff.fr/equipe-nationale/" target="_blank" rel="noopener">FFF</a><a id="flashscoreLink" class="secondary" href="https://www.flashscore.com/football/" target="_blank" rel="noopener">Flashscore</a><a id="fifaLink" class="secondary" href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026" target="_blank" rel="noopener">FIFA World Cup</a></div></section>
 
-  <footer><p>Built by Richard Freedman for the fans, including muppets. Unofficial France men’s World Cup fan site. <span id="versionText">Version 3.1</span></p><p class="copyright">© 2026 Richard Freedman. All rights reserved.</p><p class="footer-links"><a href="privacy.html">Privacy</a> · <a href="cookies.html">Cookies</a> · <a href="contact.html">Contact</a></p></footer>
+  <footer><p>Built by Richard Freedman for the fans, including muppets. Unofficial France men’s World Cup fan site. <span id="versionText">Version 4.0</span></p><p class="copyright">© 2026 Richard Freedman. All rights reserved.</p><p class="footer-links"><a href="privacy.html">Privacy</a> · <a href="cookies.html">Cookies</a> · <a href="contact.html">Contact</a></p></footer>
   <div class="celebration" id="celebration" role="dialog" aria-modal="true" aria-labelledby="celebrationTitle"><div class="stadium-lights"></div><div class="flag flag-left">🇫🇷</div><div class="flag flag-right">🇫🇷</div><div class="fireworks" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="celebration-card"><div class="crest-burst">🇫🇷</div><div class="big trophy-rise">🏆</div><h2 id="celebrationTitle">FRANCE WIN!</h2><p>Les Bleus roar on.</p><div class="sparkle-row">✦ ✧ ✦ ✧ ✦</div><button id="closeCelebration">Close celebration</button></div></div>
   <div class="cookie" id="cookie"><span>This site uses local storage to remember your prediction and cookie choice.</span><button id="acceptCookie">OK</button></div>
   <script>window.addEventListener('load',()=>setTimeout(()=>document.getElementById('loader')?.classList.add('hide'),1200));setTimeout(()=>document.getElementById('loader')?.classList.add('hide'),5000);</script>
@@ -197,5 +211,6 @@
   <script src="content-data.js"></script>
   <script src="app.js" defer></script>
   <script src="enhanced-france.js" defer></script>
+  <script src="final-polish.js" defer></script>
 </body>
 </html>
