@@ -1,0 +1,9 @@
+{
+  "name": "Les Bleus Countdown – France v Spain",
+  "short_name": "Les Bleus",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f8fc",
+  "theme_color": "#0055a4",
+  "description": "France v Spain World Cup semi-final fan hub"
+}
