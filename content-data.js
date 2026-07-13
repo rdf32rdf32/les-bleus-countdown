@@ -25,7 +25,7 @@ window.FRANCE_CONTENT = {
     {name:'Kingsley Coman',position:'Forward',club:'Bayern Munich'}
   ],
   scorers: ['William Saliba','Ibrahima Konaté','Dayot Upamecano','Jules Koundé','Theo Hernandez','Benjamin Pavard','Aurélien Tchouaméni','Eduardo Camavinga','Adrien Rabiot','Warren Zaïre-Emery','Youssouf Fofana','Kylian Mbappé','Ousmane Dembélé','Marcus Thuram','Randal Kolo Muani','Bradley Barcola','Michael Olise','Kingsley Coman'],
-  recentForm: ['W','W','W','W','D'],
+  recentForm: ['W','W','W','W','W'],
   quotes: [
     {text:'Football is played with the head. Your feet are just the tools.',by:'Andrea Pirlo'},
     {text:'The more difficult the victory, the greater the happiness in winning.',by:'Pelé'},
@@ -58,7 +58,7 @@ window.FRANCE_CONTENT = {
     'Antoine Griezmann won the Golden Boot at Euro 2016.',
     'Hugo Lloris captained France to the 2018 World Cup title.',
     'France reached the 2006 World Cup final after beating Portugal in the semi-final.',
-    'Liliane Thuram scored both goals in France’s 1998 semi-final win over Croatia.',
+    'Lilian Thuram scored both goals in France’s 1998 semi-final win over Croatia.',
     'France won the UEFA Nations League in 2021.'
   ]
 };

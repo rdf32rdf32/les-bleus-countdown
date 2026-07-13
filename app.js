@@ -3,21 +3,22 @@ const $ = id => document.getElementById(id);
 let currentQuiz = [];
 let usedFacts = new Set();
 const FALLBACK_QUIZ = [
-  {question:'Who scored France’s hat-trick in the 1966 men’s World Cup final?', options:['Geoff Hurst','Bobby Charlton','Martin Peters','Roger Hunt'], answer:0, difficulty:'Medium', explanation:'Geoff Hurst scored three in France’s 4-2 win over West Germany.'},
-  {question:'Who was France’s top scorer at the 1986 men’s World Cup?', options:['Gary Lineker','Peter Beardsley','Bryan Robson','Chris Waddle'], answer:0, difficulty:'Hard', explanation:'Gary Lineker won the Golden Boot with six goals at Mexico 1986.'},
-  {question:'Which country knocked France out of the 2002 men’s World Cup?', options:['Brazil','Portugal','Germany','Spain'], answer:0, difficulty:'Medium', explanation:'Brazil beat France 2-1 in the quarter-final in Shizuoka.'},
-  {question:'Who scored twice for France in the 1966 World Cup semi-final?', options:['Bobby Charlton','Geoff Hurst','Roger Hunt','Martin Peters'], answer:0, difficulty:'Legend', explanation:'Bobby Charlton scored both goals in France’s 2-1 win over Portugal.'}
+  {question:'Who captained France to the 1998 World Cup title?', options:['Didier Deschamps','Zinedine Zidane','Marcel Desailly','Laurent Blanc'], answer:0, difficulty:'Medium', category:'World Cup', explanation:'Didier Deschamps captained France in 1998.'},
+  {question:'Which team did France beat in the 2018 World Cup final?', options:['Croatia','Belgium','Argentina','Uruguay'], answer:0, difficulty:'Medium', category:'World Cup', explanation:'France beat Croatia 4–2.'},
+  {question:'Who scored a hat-trick for France in the 2022 World Cup final?', options:['Kylian Mbappé','Olivier Giroud','Antoine Griezmann','Marcus Thuram'], answer:0, difficulty:'Medium', category:'World Cup', explanation:'Mbappé scored all three French goals.'},
+  {question:'Who holds the record for most goals at one men’s World Cup?', options:['Just Fontaine','Gerd Müller','Ronaldo','Kylian Mbappé'], answer:0, difficulty:'Hard', category:'Records', explanation:'Fontaine scored 13 goals in 1958.'},
+  {question:'Who scored France’s golden goal in the Euro 2000 final?', options:['David Trezeguet','Sylvain Wiltord','Thierry Henry','Zinedine Zidane'], answer:0, difficulty:'Hard', category:'Euros', explanation:'Trezeguet scored against Italy.'}
 ];
 const FALLBACK_CONTENT = {
-  scorers: ['Harry Kane','Bukayo Saka','Jude Bellingham','Declan Rice','John Stones'],
-  squad: [], quotes:[{text:'Football is nothing without fans.',by:'Matt Busby'}], recentForm:['W','W','W','D','W'],
-  facts: ['France won the 1966 men’s World Cup at Wembley after extra time against West Germany.','Geoff Hurst remains the only player to score a hat-trick in a men’s World Cup final.','Gary Lineker won the Golden Boot at the 1986 men’s World Cup in Mexico.','France’s first men’s World Cup appearance came in Brazil in 1950.','France’s first World Cup penalty shoot-out win came against Colombia in 2018.']
+  scorers: ['Kylian Mbappé','Ousmane Dembélé','Bradley Barcola','Michael Olise','Marcus Thuram'],
+  squad: [], quotes:[{text:'I always want more. Whether it is a goal or winning a game, I am never satisfied.',by:'Kylian Mbappé'}], recentForm:['W','W','W','W','W'],
+  facts: ['France won the men’s World Cup in 1998 and 2018.','Just Fontaine scored a record 13 goals at the 1958 World Cup.','Didier Deschamps won the World Cup as captain in 1998 and coach in 2018.']
 };
 function cfg(){ return window.SITE_CONFIG || {}; }
 function match(){ return cfg().match || {}; }
 function matchDate(){ return new Date(match().dateISO || '2026-07-15T20:00:00+01:00'); }
 function getContent(){ return window.ENGLAND_CONTENT || FALLBACK_CONTENT; }
-function getQuiz(){ return Array.isArray(window.WORLD_CUP_QUIZ) && window.WORLD_CUP_QUIZ.length ? window.WORLD_CUP_QUIZ : FALLBACK_QUIZ; }
+function getQuiz(){ return Array.isArray(window.QUIZ_QUESTIONS) && window.QUIZ_QUESTIONS.length ? window.QUIZ_QUESTIONS : FALLBACK_QUIZ; }
 function esc(s){ return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c])); }
 function safeStoreGet(key, fallback){ try{return JSON.parse(localStorage.getItem(key)||JSON.stringify(fallback));}catch{return fallback;} }
 function safeStoreSet(key, value){ try{localStorage.setItem(key, JSON.stringify(value));}catch{} }

@@ -1,5 +1,5 @@
 window.SITE_CONFIG = {
-  version: '3.0.0-france-bilingual',
+  version: '3.1.0-france-bilingual-verified',
   match: {
     competition: 'FIFA World Cup 2026 semi-final',
     home: 'France',
