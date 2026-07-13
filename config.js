@@ -1,32 +1,32 @@
 window.SITE_CONFIG = {
   version: '3.1.0-france-bilingual-verified',
   match: {
-    competition: 'FIFA World Cup 2026 semi-final',
+    competition: 'Demi-finale de la Coupe du monde 2026',
     home: 'France',
-    away: 'Spain',
+    away: 'Espagne',
     dateISO: '2026-07-14T21:00:00+02:00',
-    venue: 'Dallas Stadium, Arlington',
-    stage: 'Semi-final',
+    venue: 'Stade de Dallas, Arlington',
+    stage: 'Demi-finale',
     lineupStatus: 'predicted',
-    lineupUpdated: 'Predicted line-up. Confirmed teams normally arrive around one hour before kick-off.',
+    lineupUpdated: 'Composition probable. Les compositions officielles sont généralement annoncées environ une heure avant le coup d’envoi.',
     finalStatus: '',
     route: [
-      { label: 'Round of 32', detail: 'France 3–0 Sweden', status: 'done' },
-      { label: 'Round of 16', detail: 'France 1–0 Paraguay', status: 'done' },
-      { label: 'Quarter-final', detail: 'France 2–0 Morocco', meta: '9 July', status: 'done' },
-      { label: 'Semi-final', detail: 'France v Spain', meta: 'Dallas/Arlington | 14 July | 21:00 France', status: 'live' },
-      { label: 'Final', detail: 'England or Argentina', meta: 'New York/New Jersey | 19 July', status: 'future' }
+      { label: 'Seizièmes de finale', detail: 'France 3–0 Sweden', status: 'done' },
+      { label: 'Huitièmes de finale', detail: 'France 1–0 Paraguay', status: 'done' },
+      { label: 'Quart de finale', detail: 'France 2–0 Morocco', meta: '9 juillet', status: 'done' },
+      { label: 'Demi-finale', detail: 'France v Espagne', meta: 'Dallas/Arlington | 14 juillet | 21:00 France', status: 'live' },
+      { label: 'Finale', detail: 'Angleterre ou Argentine', meta: 'New York/New Jersey | 19 juillet', status: 'future' }
     ],
     teamNews: [
-      { status: 'green', icon: '🟢', title: 'France reach another semi-final', text: 'Les Bleus progressed after a controlled 2–0 quarter-final victory over Morocco.' },
-      { status: 'green', icon: '🟢', title: 'Mbappé leads the attack', text: 'France’s captain remains the main threat with his pace, movement and finishing.' },
-      { status: 'amber', icon: '🟡', title: 'Selection remains predicted', text: 'The official starting XI should be confirmed around one hour before kick-off.' },
-      { status: 'green', icon: '🟢', title: 'Defence in strong form', text: 'France have kept clean sheets in all three knockout matches.' }
+      { status: 'green', icon: '🟢', title: 'La France atteint une nouvelle demi-finale', text: 'Les Bleus se sont qualifiés après une victoire maîtrisée 2-0 contre le Maroc en quart de finale.' },
+      { status: 'green', icon: '🟢', title: 'Mbappé mène l’attaque', text: 'Le capitaine français reste la principale menace grâce à sa vitesse, ses déplacements et sa finition.' },
+      { status: 'amber', icon: '🟡', title: 'La composition reste probable', text: 'Le onze de départ officiel devrait être confirmé environ une heure avant le coup d’envoi.' },
+      { status: 'green', icon: '🟢', title: 'Une défense en grande forme', text: 'La France n’a encaissé aucun but lors de ses trois matches à élimination directe.' }
     ],
-    weather: { latitude: 32.7473, longitude: -97.0945, label: 'Dallas Stadium, Arlington' },
+    weather: { latitude: 32.7473, longitude: -97.0945, label: 'Stade de Dallas, Arlington' },
     nextFixtures: [
-      { opponent:'Spain', date:'14 July 2026 · 21:00 France', venue:'Dallas Stadium, Arlington', competition:'World Cup semi-final', conditional:false },
-      { opponent:'England or Argentina', date:'19 July 2026 · 21:00 France', venue:'New York/New Jersey Stadium', competition:'World Cup final', conditional:true }
+      { opponent:'Espagne', date:'14 juillet 2026 · 21:00 France', venue:'Stade de Dallas, Arlington', competition:'Demi-finale de la Coupe du monde', conditional:false },
+      { opponent:'Angleterre ou Argentine', date:'19 juillet 2026 · 21:00 France', venue:'Stade de New York/New Jersey', competition:'Finale de la Coupe du monde', conditional:true }
     ],
     links: {
       france: 'https://www.fff.fr/equipe-nationale/',

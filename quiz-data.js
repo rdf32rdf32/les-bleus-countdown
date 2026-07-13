@@ -662,7 +662,7 @@ window.QUIZ_QUESTIONS_FR = [
     "answer": 0,
     "difficulty": "Moyen",
     "category": "Coupe du monde",
-    "explanation": "Didier Deschamps portait le brassard lors de la finale de 1998."
+    "explanation": "Didier Deschamps portait le brassard en 1998."
   },
   {
     "question": "Quelle équipe la France a-t-elle battue en finale de la Coupe du monde 1998 ?",
@@ -675,7 +675,7 @@ window.QUIZ_QUESTIONS_FR = [
     "answer": 0,
     "difficulty": "Moyen",
     "category": "Coupe du monde",
-    "explanation": "La France a battu le Brésil 3-0 au Stade de France."
+    "explanation": "La France a battu le Brésil 3-0."
   },
   {
     "question": "Qui a inscrit deux buts en finale de la Coupe du monde 1998 ?",
@@ -688,10 +688,10 @@ window.QUIZ_QUESTIONS_FR = [
     "answer": 0,
     "difficulty": "Moyen",
     "category": "Coupe du monde",
-    "explanation": "Zinédine Zidane a marqué deux buts de la tête en première période."
+    "explanation": "Zidane a marqué deux fois de la tête."
   },
   {
-    "question": "Qui a marqué le troisième but français en finale de la Coupe du monde 1998 ?",
+    "question": "Qui a marqué le troisième but français en finale de 1998 ?",
     "options": [
       "Emmanuel Petit",
       "Christophe Dugarry",
@@ -701,7 +701,215 @@ window.QUIZ_QUESTIONS_FR = [
     "answer": 0,
     "difficulty": "Moyen",
     "category": "Coupe du monde",
-    "explanation": "Emmanuel Petit a inscrit le troisième but dans le temps additionnel."
+    "explanation": "Emmanuel Petit a inscrit le dernier but."
+  },
+  {
+    "question": "Dans quel stade s'est jouée la finale de la Coupe du monde 1998 ?",
+    "options": [
+      "Stade de France",
+      "Parc des Princes",
+      "Vélodrome",
+      "Stade de Gerland"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Stades",
+    "explanation": "La finale s’est jouée au Stade de France."
+  },
+  {
+    "question": "Quel pays la France a-t-elle battu en demi-finale du Mondial 1998 ?",
+    "options": [
+      "Croatie",
+      "Italie",
+      "Brésil",
+      "Pays-Bas"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Coupe du monde",
+    "explanation": "La France a battu la Croatie 2-1."
+  },
+  {
+    "question": "Qui a inscrit les deux buts français en demi-finale du Mondial 1998 ?",
+    "options": [
+      "Lilian Thuram",
+      "Zinédine Zidane",
+      "Thierry Henry",
+      "David Trezeguet"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Coupe du monde",
+    "explanation": "Lilian Thuram a marqué ses deux seuls buts en sélection."
+  },
+  {
+    "question": "Quel gardien était titulaire pour la France au Mondial 1998 ?",
+    "options": [
+      "Fabien Barthez",
+      "Bernard Lama",
+      "Grégory Coupet",
+      "Lionel Charbonnier"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Joueurs",
+    "explanation": "Fabien Barthez était le gardien titulaire."
+  },
+  {
+    "question": "Quel joueur a marqué le but en or en finale de l'Euro 2000 ?",
+    "options": [
+      "David Trezeguet",
+      "Sylvain Wiltord",
+      "Thierry Henry",
+      "Robert Pirès"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Euro",
+    "explanation": "David Trezeguet a inscrit le but en or contre l’Italie."
+  },
+  {
+    "question": "Qui a égalisé pour la France à la fin du temps réglementaire en finale de l'Euro 2000 ?",
+    "options": [
+      "Sylvain Wiltord",
+      "David Trezeguet",
+      "Zinédine Zidane",
+      "Patrick Vieira"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Euro",
+    "explanation": "Sylvain Wiltord a égalisé dans le temps additionnel."
+  },
+  {
+    "question": "Quel pays la France a-t-elle battu en finale de l'Euro 2000 ?",
+    "options": [
+      "Italie",
+      "Portugal",
+      "Pays-Bas",
+      "Espagne"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Euro",
+    "explanation": "La France a battu l’Italie 2-1 après prolongation."
+  },
+  {
+    "question": "Qui était le sélectionneur de la France à l'Euro 2000 ?",
+    "options": [
+      "Roger Lemerre",
+      "Aimé Jacquet",
+      "Raymond Domenech",
+      "Michel Hidalgo"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Sélectionneurs",
+    "explanation": "Roger Lemerre dirigeait les Bleus."
+  },
+  {
+    "question": "Quel joueur a marqué neuf buts à l'Euro 1984 ?",
+    "options": [
+      "Michel Platini",
+      "Alain Giresse",
+      "Jean Tigana",
+      "Dominique Rocheteau"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Euro",
+    "explanation": "Michel Platini a marqué neuf buts en cinq matches."
+  },
+  {
+    "question": "Quel pays la France a-t-elle battu en finale de l'Euro 1984 ?",
+    "options": [
+      "Espagne",
+      "Portugal",
+      "Belgique",
+      "Danemark"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Euro",
+    "explanation": "La France a battu l’Espagne 2-0."
+  },
+  {
+    "question": "Qui a inscrit le premier but de la finale de l'Euro 1984 ?",
+    "options": [
+      "Michel Platini",
+      "Bruno Bellone",
+      "Alain Giresse",
+      "Luis Fernandez"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Euro",
+    "explanation": "Platini a marqué sur coup franc."
+  },
+  {
+    "question": "Quel joueur a marqué le second but français en finale de l'Euro 1984 ?",
+    "options": [
+      "Bruno Bellone",
+      "Jean Tigana",
+      "Bernard Lacombe",
+      "Didier Six"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Euro",
+    "explanation": "Bruno Bellone a marqué en fin de match."
+  },
+  {
+    "question": "Qui était le sélectionneur de la France lors de l'Euro 1984 ?",
+    "options": [
+      "Michel Hidalgo",
+      "Aimé Jacquet",
+      "Henri Michel",
+      "Roger Lemerre"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Sélectionneurs",
+    "explanation": "Michel Hidalgo a mené la France à son premier grand titre."
+  },
+  {
+    "question": "Quel trophée la France a-t-elle remporté en 2021 ?",
+    "options": [
+      "Ligue des nations",
+      "Euro",
+      "Coupe des confédérations",
+      "Finalissima"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Ligue des nations",
+    "explanation": "La France a remporté la Ligue des nations 2021."
+  },
+  {
+    "question": "Quel pays la France a-t-elle battu en finale de la Ligue des nations 2021 ?",
+    "options": [
+      "Espagne",
+      "Belgique",
+      "Italie",
+      "Portugal"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Ligue des nations",
+    "explanation": "La France s’est imposée 2-1 contre l’Espagne."
+  },
+  {
+    "question": "Qui a inscrit le but décisif en finale de la Ligue des nations 2021 ?",
+    "options": [
+      "Kylian Mbappé",
+      "Karim Benzema",
+      "Antoine Griezmann",
+      "Paul Pogba"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Ligue des nations",
+    "explanation": "Mbappé a marqué le deuxième but français."
   },
   {
     "question": "Quelle équipe la France a-t-elle battue en finale de la Coupe du monde 2018 ?",
@@ -714,23 +922,283 @@ window.QUIZ_QUESTIONS_FR = [
     "answer": 0,
     "difficulty": "Moyen",
     "category": "Coupe du monde",
-    "explanation": "La France a battu la Croatie 4-2 à Moscou."
+    "explanation": "La France a battu la Croatie 4-2."
   },
   {
-    "question": "Qui était le sélectionneur de la France lors du titre mondial de 2018 ?",
+    "question": "Qui était le capitaine des Bleus lors du titre mondial de 2018 ?",
     "options": [
-      "Didier Deschamps",
-      "Laurent Blanc",
-      "Raymond Domenech",
-      "Aimé Jacquet"
+      "Hugo Lloris",
+      "Raphaël Varane",
+      "Antoine Griezmann",
+      "Paul Pogba"
     ],
     "answer": 0,
     "difficulty": "Moyen",
     "category": "Coupe du monde",
-    "explanation": "Didier Deschamps a remporté le tournoi comme sélectionneur vingt ans après l'avoir gagné comme capitaine."
+    "explanation": "Hugo Lloris était capitaine."
   },
   {
-    "question": "Qui a marqué un triplé pour la France en finale de la Coupe du monde 2022 ?",
+    "question": "Qui était le sélectionneur de la France au Mondial 2018 ?",
+    "options": [
+      "Didier Deschamps",
+      "Laurent Blanc",
+      "Raymond Domenech",
+      "Roger Lemerre"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Sélectionneurs",
+    "explanation": "Didier Deschamps a remporté le trophée comme sélectionneur."
+  },
+  {
+    "question": "Quel joueur français a marqué en finale du Mondial 2018 à l'âge de 19 ans ?",
+    "options": [
+      "Kylian Mbappé",
+      "Ousmane Dembélé",
+      "Thomas Lemar",
+      "Corentin Tolisso"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Joueurs",
+    "explanation": "Mbappé a marqué le quatrième but français."
+  },
+  {
+    "question": "Qui a ouvert le score en finale du Mondial 2018 ?",
+    "options": [
+      "Mario Mandžukić contre son camp",
+      "Antoine Griezmann",
+      "Paul Pogba",
+      "Kylian Mbappé"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Coupe du monde",
+    "explanation": "Mandžukić a marqué contre son camp."
+  },
+  {
+    "question": "Quel joueur français a transformé un penalty en finale du Mondial 2018 ?",
+    "options": [
+      "Antoine Griezmann",
+      "Kylian Mbappé",
+      "Olivier Giroud",
+      "Paul Pogba"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Coupe du monde",
+    "explanation": "Griezmann a marqué sur penalty."
+  },
+  {
+    "question": "Qui a marqué le troisième but français en finale du Mondial 2018 ?",
+    "options": [
+      "Paul Pogba",
+      "Kylian Mbappé",
+      "Antoine Griezmann",
+      "Olivier Giroud"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Coupe du monde",
+    "explanation": "Paul Pogba a porté le score à 3-1."
+  },
+  {
+    "question": "Quel pays la France a-t-elle battu en demi-finale du Mondial 2018 ?",
+    "options": [
+      "Belgique",
+      "Croatie",
+      "Uruguay",
+      "Angleterre"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Coupe du monde",
+    "explanation": "La France a gagné 1-0 contre la Belgique."
+  },
+  {
+    "question": "Qui a marqué contre la Belgique en demi-finale du Mondial 2018 ?",
+    "options": [
+      "Samuel Umtiti",
+      "Raphaël Varane",
+      "Olivier Giroud",
+      "Antoine Griezmann"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Coupe du monde",
+    "explanation": "Samuel Umtiti a marqué de la tête."
+  },
+  {
+    "question": "Quel adversaire la France a-t-elle éliminé en huitième de finale du Mondial 2018 ?",
+    "options": [
+      "Argentine",
+      "Portugal",
+      "Mexique",
+      "Danemark"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Coupe du monde",
+    "explanation": "La France a battu l’Argentine 4-3."
+  },
+  {
+    "question": "Qui a marqué deux buts contre l'Argentine en huitième de finale du Mondial 2018 ?",
+    "options": [
+      "Kylian Mbappé",
+      "Antoine Griezmann",
+      "Benjamin Pavard",
+      "Olivier Giroud"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Coupe du monde",
+    "explanation": "Mbappé a inscrit un doublé."
+  },
+  {
+    "question": "Quel défenseur a marqué une célèbre reprise contre l'Argentine en 2018 ?",
+    "options": [
+      "Benjamin Pavard",
+      "Lucas Hernandez",
+      "Raphaël Varane",
+      "Samuel Umtiti"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Coupe du monde",
+    "explanation": "Benjamin Pavard a marqué d’une reprise de volée."
+  },
+  {
+    "question": "Quel pays la France a-t-elle battu en quart de finale du Mondial 2018 ?",
+    "options": [
+      "Uruguay",
+      "Brésil",
+      "Belgique",
+      "Colombie"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Coupe du monde",
+    "explanation": "La France a gagné 2-0 contre l’Uruguay."
+  },
+  {
+    "question": "Qui a marqué de la tête contre l'Uruguay en quart de finale du Mondial 2018 ?",
+    "options": [
+      "Raphaël Varane",
+      "Samuel Umtiti",
+      "Olivier Giroud",
+      "Paul Pogba"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Coupe du monde",
+    "explanation": "Raphaël Varane a ouvert le score."
+  },
+  {
+    "question": "Combien de Coupes du monde masculines la France avait-elle remportées après 2018 ?",
+    "options": [
+      "Deux",
+      "Une",
+      "Trois",
+      "Quatre"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Records",
+    "explanation": "La France a été championne en 1998 et 2018."
+  },
+  {
+    "question": "Quel Français détient le record de buts sur une seule Coupe du monde masculine ?",
+    "options": [
+      "Just Fontaine",
+      "Kylian Mbappé",
+      "Michel Platini",
+      "Thierry Henry"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Records",
+    "explanation": "Just Fontaine a marqué 13 buts en 1958."
+  },
+  {
+    "question": "Combien de buts Just Fontaine a-t-il marqués au Mondial 1958 ?",
+    "options": [
+      "13",
+      "11",
+      "12",
+      "14"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Records",
+    "explanation": "Il a inscrit 13 buts en six matches."
+  },
+  {
+    "question": "Dans quel pays s'est déroulée la Coupe du monde 1958 ?",
+    "options": [
+      "Suède",
+      "Suisse",
+      "Chili",
+      "France"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Coupe du monde",
+    "explanation": "Le tournoi de 1958 s’est joué en Suède."
+  },
+  {
+    "question": "À quelle place la France a-t-elle terminé au Mondial 1958 ?",
+    "options": [
+      "Troisième",
+      "Deuxième",
+      "Quatrième",
+      "Première"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Coupe du monde",
+    "explanation": "La France a terminé troisième."
+  },
+  {
+    "question": "Quel joueur français a remporté le Ballon d'Or en 1958 ?",
+    "options": [
+      "Raymond Kopa",
+      "Just Fontaine",
+      "Roger Piantoni",
+      "Jean Vincent"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Joueurs",
+    "explanation": "Raymond Kopa a remporté le Ballon d’Or 1958."
+  },
+  {
+    "question": "Quel joueur français a remporté le Ballon d'Or en 1991 ?",
+    "options": [
+      "Jean-Pierre Papin",
+      "Eric Cantona",
+      "Laurent Blanc",
+      "Didier Deschamps"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Joueurs",
+    "explanation": "Jean-Pierre Papin a été récompensé en 1991."
+  },
+  {
+    "question": "Quel Français a remporté le Ballon d'Or en 1998 ?",
+    "options": [
+      "Zinédine Zidane",
+      "Thierry Henry",
+      "Didier Deschamps",
+      "Marcel Desailly"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Joueurs",
+    "explanation": "Zidane a remporté le Ballon d’Or après le Mondial."
+  },
+  {
+    "question": "Quel joueur a marqué un triplé pour la France en finale du Mondial 2022 ?",
     "options": [
       "Kylian Mbappé",
       "Olivier Giroud",
@@ -740,153 +1208,426 @@ window.QUIZ_QUESTIONS_FR = [
     "answer": 0,
     "difficulty": "Moyen",
     "category": "Coupe du monde",
-    "explanation": "Kylian Mbappé a inscrit les trois buts français lors de la finale."
+    "explanation": "Mbappé a inscrit les trois buts français."
   },
   {
-    "question": "Quel Français détient le record de buts lors d'une seule Coupe du monde masculine ?",
+    "question": "Quel pays a battu la France en finale du Mondial 2022 ?",
     "options": [
-      "Just Fontaine",
-      "Thierry Henry",
-      "Michel Platini",
+      "Argentine",
+      "Croatie",
+      "Brésil",
+      "Espagne"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Coupe du monde",
+    "explanation": "L’Argentine a gagné aux tirs au but."
+  },
+  {
+    "question": "Qui était le capitaine de la France en finale du Mondial 2022 ?",
+    "options": [
+      "Hugo Lloris",
+      "Kylian Mbappé",
+      "Raphaël Varane",
+      "Antoine Griezmann"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Coupe du monde",
+    "explanation": "Hugo Lloris portait le brassard."
+  },
+  {
+    "question": "Quel gardien argentin a arrêté le tir de Randal Kolo Muani en prolongation de la finale 2022 ?",
+    "options": [
+      "Emiliano Martínez",
+      "Franco Armani",
+      "Sergio Romero",
+      "Gerónimo Rulli"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Coupe du monde",
+    "explanation": "Emiliano Martínez a réalisé l’arrêt décisif."
+  },
+  {
+    "question": "Qui a marqué pour la France contre l'Angleterre en quart de finale du Mondial 2022 ?",
+    "options": [
+      "Aurélien Tchouaméni et Olivier Giroud",
+      "Mbappé et Griezmann",
+      "Dembélé et Giroud",
+      "Rabiot et Mbappé"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Coupe du monde",
+    "explanation": "Tchouaméni et Giroud ont marqué."
+  },
+  {
+    "question": "Quel pays la France a-t-elle battu en demi-finale du Mondial 2022 ?",
+    "options": [
+      "Maroc",
+      "Croatie",
+      "Angleterre",
+      "Portugal"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Coupe du monde",
+    "explanation": "La France a battu le Maroc 2-0."
+  },
+  {
+    "question": "Qui a ouvert le score contre le Maroc en demi-finale du Mondial 2022 ?",
+    "options": [
+      "Théo Hernandez",
+      "Randal Kolo Muani",
+      "Olivier Giroud",
       "Kylian Mbappé"
     ],
     "answer": 0,
     "difficulty": "Difficile",
-    "category": "Records",
-    "explanation": "Just Fontaine a marqué 13 buts lors de l'édition 1958."
+    "category": "Coupe du monde",
+    "explanation": "Théo Hernandez a marqué très tôt."
   },
   {
-    "question": "Qui a marqué le but en or de la France en finale de l'Euro 2000 ?",
+    "question": "Qui a inscrit le second but contre le Maroc en demi-finale du Mondial 2022 ?",
     "options": [
-      "David Trezeguet",
-      "Sylvain Wiltord",
+      "Randal Kolo Muani",
+      "Marcus Thuram",
+      "Olivier Giroud",
+      "Antoine Griezmann"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Coupe du monde",
+    "explanation": "Kolo Muani a marqué peu après son entrée."
+  },
+  {
+    "question": "Quel attaquant est devenu le meilleur buteur de l'histoire des Bleus pendant le Mondial 2022 ?",
+    "options": [
+      "Olivier Giroud",
       "Thierry Henry",
-      "Zinédine Zidane"
+      "Kylian Mbappé",
+      "Karim Benzema"
     ],
     "answer": 0,
-    "difficulty": "Difficile",
-    "category": "Euro",
-    "explanation": "David Trezeguet a inscrit le but en or contre l'Italie."
+    "difficulty": "Moyen",
+    "category": "Records",
+    "explanation": "Olivier Giroud a dépassé Thierry Henry."
   },
   {
-    "question": "Qui a égalisé pour la France dans le temps additionnel de la finale de l'Euro 2000 ?",
+    "question": "Quel joueur détenait auparavant le record de buts des Bleus avant Olivier Giroud ?",
     "options": [
-      "Sylvain Wiltord",
+      "Thierry Henry",
+      "Michel Platini",
       "David Trezeguet",
-      "Robert Pirès",
-      "Youri Djorkaeff"
+      "Antoine Griezmann"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Records",
+    "explanation": "Thierry Henry détenait le précédent record."
+  },
+  {
+    "question": "Quel gardien détient le record de sélections avec l'équipe de France masculine ?",
+    "options": [
+      "Hugo Lloris",
+      "Fabien Barthez",
+      "Steve Mandanda",
+      "Joël Bats"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Records",
+    "explanation": "Hugo Lloris est le joueur le plus capé des Bleus."
+  },
+  {
+    "question": "Quel défenseur a longtemps détenu le record de sélections avant Hugo Lloris ?",
+    "options": [
+      "Lilian Thuram",
+      "Marcel Desailly",
+      "Bixente Lizarazu",
+      "Laurent Blanc"
     ],
     "answer": 0,
     "difficulty": "Difficile",
+    "category": "Records",
+    "explanation": "Lilian Thuram a longtemps été le recordman."
+  },
+  {
+    "question": "Quel joueur a remporté le Soulier d'or de l'Euro 2016 ?",
+    "options": [
+      "Antoine Griezmann",
+      "Cristiano Ronaldo",
+      "Olivier Giroud",
+      "Gareth Bale"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
     "category": "Euro",
-    "explanation": "Sylvain Wiltord a égalisé avant le but en or de David Trezeguet."
+    "explanation": "Griezmann a marqué six buts."
   },
   {
-    "question": "Dans quel stade s'est jouée la finale de la Coupe du monde 1998 ?",
+    "question": "Combien de buts Antoine Griezmann a-t-il marqués à l'Euro 2016 ?",
     "options": [
-      "Stade de France",
-      "Parc des Princes",
-      "Stade Vélodrome",
-      "Stade de Gerland"
-    ],
-    "answer": 0,
-    "difficulty": "Moyen",
-    "category": "Stades",
-    "explanation": "La finale s'est jouée au Stade de France, à Saint-Denis."
-  },
-  {
-    "question": "Quel sélectionneur a conduit la France au titre mondial en 1998 ?",
-    "options": [
-      "Aimé Jacquet",
-      "Roger Lemerre",
-      "Michel Hidalgo",
-      "Didier Deschamps"
-    ],
-    "answer": 0,
-    "difficulty": "Moyen",
-    "category": "Sélectionneurs",
-    "explanation": "Aimé Jacquet était le sélectionneur de l'équipe championne du monde en 1998."
-  },
-  {
-    "question": "Combien de Coupes du monde masculines la France avait-elle remportées avant l'édition 2026 ?",
-    "options": [
-      "Deux",
-      "Une",
-      "Trois",
+      "Six",
+      "Cinq",
+      "Sept",
       "Quatre"
     ],
     "answer": 0,
     "difficulty": "Moyen",
-    "category": "Coupe du monde",
-    "explanation": "La France a été championne du monde en 1998 et en 2018."
+    "category": "Euro",
+    "explanation": "Il a terminé meilleur buteur avec six buts."
   },
   {
-    "question": "Quel gardien français a été capitaine lors de la finale de la Coupe du monde 2018 ?",
+    "question": "Quel pays a battu la France en finale de l'Euro 2016 ?",
     "options": [
-      "Hugo Lloris",
-      "Fabien Barthez",
-      "Mike Maignan",
-      "Steve Mandanda"
+      "Portugal",
+      "Allemagne",
+      "Espagne",
+      "Italie"
     ],
     "answer": 0,
     "difficulty": "Moyen",
-    "category": "Joueurs",
-    "explanation": "Hugo Lloris était le capitaine des Bleus en 2018."
+    "category": "Euro",
+    "explanation": "Le Portugal a gagné 1-0 après prolongation."
   },
   {
-    "question": "Qui a marqué le deuxième but de la France contre la Croatie en finale de 2018 ?",
+    "question": "Dans quel stade s'est jouée la finale de l'Euro 2016 ?",
     "options": [
-      "Antoine Griezmann",
-      "Paul Pogba",
-      "Kylian Mbappé",
-      "Mario Mandžukić"
+      "Stade de France",
+      "Vélodrome",
+      "Parc des Princes",
+      "Stade Pierre-Mauroy"
     ],
     "answer": 0,
-    "difficulty": "Difficile",
-    "category": "Coupe du monde",
-    "explanation": "Antoine Griezmann a transformé un penalty pour donner l'avantage à la France."
+    "difficulty": "Moyen",
+    "category": "Stades",
+    "explanation": "La finale s’est jouée au Stade de France."
   },
   {
-    "question": "Quel joueur français a marqué en finale des Coupes du monde 2018 et 2022 ?",
+    "question": "Quel pays la France a-t-elle battu en demi-finale de l'Euro 2016 ?",
     "options": [
-      "Kylian Mbappé",
+      "Allemagne",
+      "Portugal",
+      "Italie",
+      "Belgique"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Euro",
+    "explanation": "La France a battu l’Allemagne 2-0."
+  },
+  {
+    "question": "Qui a marqué les deux buts français contre l'Allemagne en demi-finale de l'Euro 2016 ?",
+    "options": [
       "Antoine Griezmann",
       "Olivier Giroud",
-      "Paul Pogba"
-    ],
-    "answer": 0,
-    "difficulty": "Difficile",
-    "category": "Joueurs",
-    "explanation": "Kylian Mbappé a marqué une fois en 2018 et trois fois en 2022."
-  },
-  {
-    "question": "Quelle nation la France a-t-elle battue en demi-finale de la Coupe du monde 2018 ?",
-    "options": [
-      "Belgique",
-      "Croatie",
-      "Uruguay",
-      "Argentine"
+      "Paul Pogba",
+      "Dimitri Payet"
     ],
     "answer": 0,
     "difficulty": "Moyen",
-    "category": "Coupe du monde",
-    "explanation": "La France a battu la Belgique 1-0 grâce à un but de Samuel Umtiti."
+    "category": "Euro",
+    "explanation": "Griezmann a inscrit un doublé."
   },
   {
-    "question": "Qui a marqué pour la France en demi-finale de la Coupe du monde 2018 ?",
+    "question": "Quel joueur français a marqué sur coup franc contre la Roumanie à l'Euro 2016 ?",
     "options": [
-      "Samuel Umtiti",
-      "Raphaël Varane",
+      "Dimitri Payet",
+      "Antoine Griezmann",
       "Paul Pogba",
+      "Yohan Cabaye"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Euro",
+    "explanation": "Payet a marqué le but de la victoire."
+  },
+  {
+    "question": "Quel pays la France a-t-elle battu 5-2 en quart de finale de l'Euro 2016 ?",
+    "options": [
+      "Islande",
+      "Irlande",
+      "Pays de Galles",
+      "Suisse"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Euro",
+    "explanation": "La France a battu l’Islande 5-2."
+  },
+  {
+    "question": "Quel adversaire a éliminé la France en huitième de finale de l'Euro 2020 ?",
+    "options": [
+      "Suisse",
+      "Espagne",
+      "Croatie",
+      "Belgique"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Euro",
+    "explanation": "La Suisse a gagné aux tirs au but."
+  },
+  {
+    "question": "Quel joueur suisse a égalisé à 3-3 contre la France à l'Euro 2020 ?",
+    "options": [
+      "Mario Gavranović",
+      "Haris Seferović",
+      "Granit Xhaka",
+      "Xherdan Shaqiri"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Euro",
+    "explanation": "Gavranović a égalisé en fin de match."
+  },
+  {
+    "question": "Quel Français a manqué le dernier tir au but contre la Suisse à l'Euro 2020 ?",
+    "options": [
+      "Kylian Mbappé",
+      "Paul Pogba",
+      "Antoine Griezmann",
       "Olivier Giroud"
     ],
     "answer": 0,
-    "difficulty": "Difficile",
-    "category": "Coupe du monde",
-    "explanation": "Samuel Umtiti a marqué de la tête contre la Belgique."
+    "difficulty": "Moyen",
+    "category": "Euro",
+    "explanation": "Le tir de Mbappé a été arrêté."
   },
   {
-    "question": "Quel joueur a remporté le Ballon d'or après avoir mené la France au titre européen en 1984 ?",
+    "question": "Quel pays la France a-t-elle battu en finale de la Coupe des confédérations 2001 ?",
+    "options": [
+      "Japon",
+      "Brésil",
+      "Cameroun",
+      "Mexique"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Confédérations",
+    "explanation": "La France a battu le Japon 1-0."
+  },
+  {
+    "question": "Quel pays la France a-t-elle battu en finale de la Coupe des confédérations 2003 ?",
+    "options": [
+      "Cameroun",
+      "Japon",
+      "Brésil",
+      "Turquie"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Confédérations",
+    "explanation": "La France a battu le Cameroun au but en or."
+  },
+  {
+    "question": "Qui a marqué le but en or en finale de la Coupe des confédérations 2003 ?",
+    "options": [
+      "Thierry Henry",
+      "David Trezeguet",
+      "Robert Pirès",
+      "Sylvain Wiltord"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Confédérations",
+    "explanation": "Thierry Henry a inscrit le but décisif."
+  },
+  {
+    "question": "Quel pays a éliminé la France en demi-finale du Mondial 1982 ?",
+    "options": [
+      "Allemagne de l'Ouest",
+      "Italie",
+      "Brésil",
+      "Pologne"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Coupe du monde",
+    "explanation": "La France a perdu aux tirs au but à Séville."
+  },
+  {
+    "question": "Dans quelle ville s'est jouée la célèbre demi-finale France-Allemagne de 1982 ?",
+    "options": [
+      "Séville",
+      "Madrid",
+      "Barcelone",
+      "Bilbao"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Coupe du monde",
+    "explanation": "Le match s’est joué à Séville."
+  },
+  {
+    "question": "Quel gardien allemand a percuté Patrick Battiston en 1982 ?",
+    "options": [
+      "Harald Schumacher",
+      "Sepp Maier",
+      "Bodo Illgner",
+      "Oliver Kahn"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Coupe du monde",
+    "explanation": "Harald Schumacher était le gardien allemand."
+  },
+  {
+    "question": "Quel pays la France a-t-elle battu pour prendre la troisième place du Mondial 1986 ?",
+    "options": [
+      "Belgique",
+      "Brésil",
+      "Allemagne de l'Ouest",
+      "Mexique"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Coupe du monde",
+    "explanation": "La France a battu la Belgique 4-2 après prolongation."
+  },
+  {
+    "question": "Quel pays a éliminé la France en demi-finale du Mondial 1986 ?",
+    "options": [
+      "Allemagne de l'Ouest",
+      "Argentine",
+      "Brésil",
+      "Belgique"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Coupe du monde",
+    "explanation": "L’Allemagne de l’Ouest a gagné 2-0."
+  },
+  {
+    "question": "Quel adversaire la France a-t-elle éliminé aux tirs au but en quart de finale du Mondial 1986 ?",
+    "options": [
+      "Brésil",
+      "Italie",
+      "Espagne",
+      "Belgique"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Coupe du monde",
+    "explanation": "La France a éliminé le Brésil à Guadalajara."
+  },
+  {
+    "question": "Quel gardien français a arrêté le tir au but de Zico pendant le match France-Brésil de 1986 ?",
+    "options": [
+      "Joël Bats",
+      "Bruno Martini",
+      "Jean-Luc Ettori",
+      "Fabien Barthez"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Coupe du monde",
+    "explanation": "Joël Bats a arrêté le penalty de Zico."
+  },
+  {
+    "question": "Qui était le capitaine de la France au Mondial 1986 ?",
     "options": [
       "Michel Platini",
       "Alain Giresse",
@@ -894,22 +1635,321 @@ window.QUIZ_QUESTIONS_FR = [
       "Luis Fernandez"
     ],
     "answer": 0,
-    "difficulty": "Difficile",
-    "category": "Euro",
-    "explanation": "Michel Platini a remporté le Ballon d'or 1984 après avoir marqué neuf buts à l'Euro."
+    "difficulty": "Moyen",
+    "category": "Joueurs",
+    "explanation": "Michel Platini était capitaine."
   },
   {
-    "question": "Quelle équipe la France a-t-elle battue en finale de la Ligue des nations 2021 ?",
+    "question": "Quel pays la France a-t-elle battu en demi-finale de l'Euro 1984 ?",
     "options": [
+      "Portugal",
       "Espagne",
+      "Danemark",
+      "Belgique"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Euro",
+    "explanation": "La France a gagné 3-2 après prolongation."
+  },
+  {
+    "question": "Qui a marqué le but victorieux contre le Portugal en demi-finale de l'Euro 1984 ?",
+    "options": [
+      "Michel Platini",
+      "Jean-François Domergue",
+      "Alain Giresse",
+      "Bruno Bellone"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Euro",
+    "explanation": "Platini a marqué à la 119e minute."
+  },
+  {
+    "question": "Quel défenseur a inscrit deux buts contre le Portugal en demi-finale de l'Euro 1984 ?",
+    "options": [
+      "Jean-François Domergue",
+      "Maxime Bossis",
+      "Patrick Battiston",
+      "Manuel Amoros"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Euro",
+    "explanation": "Domergue a marqué deux fois."
+  },
+  {
+    "question": "Quel surnom est traditionnellement donné à l'équipe de France ?",
+    "options": [
+      "Les Bleus",
+      "Les Tricolores rouges",
+      "Les Coqs blancs",
+      "Les Gaulois noirs"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Culture",
+    "explanation": "L’équipe de France est appelée Les Bleus."
+  },
+  {
+    "question": "Quel symbole figure sur le maillot de l'équipe de France ?",
+    "options": [
+      "Un coq",
+      "Un lion",
+      "Un aigle",
+      "Un taureau"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Culture",
+    "explanation": "Le coq est l’emblème traditionnel."
+  },
+  {
+    "question": "En quelle année l'équipe de France masculine a-t-elle disputé son premier match international ?",
+    "options": [
+      "1904",
+      "1898",
+      "1910",
+      "1920"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Histoire",
+    "explanation": "Le premier match a eu lieu en 1904 contre la Belgique."
+  },
+  {
+    "question": "Quel était l'adversaire du premier match international de la France en 1904 ?",
+    "options": [
       "Belgique",
+      "Angleterre",
+      "Suisse",
+      "Italie"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Histoire",
+    "explanation": "La France a affronté la Belgique."
+  },
+  {
+    "question": "Quel était le score du premier match France-Belgique en 1904 ?",
+    "options": [
+      "3-3",
+      "1-1",
+      "2-2",
+      "4-3"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Histoire",
+    "explanation": "Le match s’est terminé sur le score de 3-3."
+  },
+  {
+    "question": "Quel Français a marqué en finale des Coupes du monde 1998 et 2006 ?",
+    "options": [
+      "Zinédine Zidane",
+      "Thierry Henry",
+      "David Trezeguet",
+      "Patrick Vieira"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Records",
+    "explanation": "Zidane a marqué dans les deux finales."
+  },
+  {
+    "question": "Quel pays a battu la France en finale du Mondial 2006 ?",
+    "options": [
       "Italie",
+      "Brésil",
+      "Allemagne",
       "Portugal"
     ],
     "answer": 0,
     "difficulty": "Moyen",
-    "category": "Ligue des nations",
-    "explanation": "La France a battu l'Espagne 2-1 à Milan."
+    "category": "Coupe du monde",
+    "explanation": "L’Italie a gagné aux tirs au but."
+  },
+  {
+    "question": "Qui a marqué le but français en finale du Mondial 2006 ?",
+    "options": [
+      "Zinédine Zidane",
+      "Thierry Henry",
+      "Florent Malouda",
+      "Franck Ribéry"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Coupe du monde",
+    "explanation": "Zidane a marqué sur penalty."
+  },
+  {
+    "question": "Quel gardien était titulaire pour la France au Mondial 2006 ?",
+    "options": [
+      "Fabien Barthez",
+      "Grégory Coupet",
+      "Mickaël Landreau",
+      "Hugo Lloris"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Joueurs",
+    "explanation": "Fabien Barthez était titulaire."
+  },
+  {
+    "question": "Quel pays la France a-t-elle battu en demi-finale du Mondial 2006 ?",
+    "options": [
+      "Portugal",
+      "Allemagne",
+      "Italie",
+      "Espagne"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Coupe du monde",
+    "explanation": "La France a gagné 1-0 contre le Portugal."
+  },
+  {
+    "question": "Qui a marqué contre le Portugal en demi-finale du Mondial 2006 ?",
+    "options": [
+      "Zinédine Zidane",
+      "Thierry Henry",
+      "Franck Ribéry",
+      "Patrick Vieira"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Coupe du monde",
+    "explanation": "Zidane a transformé un penalty."
+  },
+  {
+    "question": "Quel pays la France a-t-elle éliminé en quart de finale du Mondial 2006 ?",
+    "options": [
+      "Brésil",
+      "Espagne",
+      "Portugal",
+      "Allemagne"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Coupe du monde",
+    "explanation": "La France a battu le Brésil 1-0."
+  },
+  {
+    "question": "Qui a marqué le but contre le Brésil en quart de finale du Mondial 2006 ?",
+    "options": [
+      "Thierry Henry",
+      "Zinédine Zidane",
+      "Patrick Vieira",
+      "Franck Ribéry"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Coupe du monde",
+    "explanation": "Thierry Henry a marqué sur un coup franc de Zidane."
+  },
+  {
+    "question": "Quel pays la France a-t-elle battu en huitième de finale du Mondial 2006 ?",
+    "options": [
+      "Espagne",
+      "Suisse",
+      "Togo",
+      "Corée du Sud"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Coupe du monde",
+    "explanation": "La France a battu l’Espagne 3-1."
+  },
+  {
+    "question": "Qui a marqué le troisième but français contre l'Espagne en 2006 ?",
+    "options": [
+      "Zinédine Zidane",
+      "Franck Ribéry",
+      "Patrick Vieira",
+      "Thierry Henry"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Coupe du monde",
+    "explanation": "Zidane a marqué en fin de match."
+  },
+  {
+    "question": "Quel sélectionneur a conduit la France en finale du Mondial 2006 ?",
+    "options": [
+      "Raymond Domenech",
+      "Aimé Jacquet",
+      "Roger Lemerre",
+      "Didier Deschamps"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Sélectionneurs",
+    "explanation": "Raymond Domenech était le sélectionneur."
+  },
+  {
+    "question": "Quel joueur a été capitaine de la France lors de la finale du Mondial 2006 ?",
+    "options": [
+      "Zinédine Zidane",
+      "Patrick Vieira",
+      "Lilian Thuram",
+      "Fabien Barthez"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Joueurs",
+    "explanation": "Zidane était capitaine lors de sa dernière sélection."
+  },
+  {
+    "question": "Quel Français a remporté le Ballon d'Or du Mondial 2006 ?",
+    "options": [
+      "Zinédine Zidane",
+      "Thierry Henry",
+      "Lilian Thuram",
+      "Franck Ribéry"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Récompenses",
+    "explanation": "Zidane a été élu meilleur joueur du tournoi."
+  },
+  {
+    "question": "Quel joueur français a marqué le premier but du Mondial 2014 contre le Honduras ?",
+    "options": [
+      "Karim Benzema",
+      "Olivier Giroud",
+      "Mathieu Valbuena",
+      "Blaise Matuidi"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Coupe du monde",
+    "explanation": "Benzema a ouvert le score sur penalty."
+  },
+  {
+    "question": "Quel pays a éliminé la France en quart de finale du Mondial 2014 ?",
+    "options": [
+      "Allemagne",
+      "Brésil",
+      "Argentine",
+      "Pays-Bas"
+    ],
+    "answer": 0,
+    "difficulty": "Moyen",
+    "category": "Coupe du monde",
+    "explanation": "L’Allemagne a gagné 1-0."
+  },
+  {
+    "question": "Quel défenseur allemand a marqué contre la France au Mondial 2014 ?",
+    "options": [
+      "Mats Hummels",
+      "Per Mertesacker",
+      "Philipp Lahm",
+      "Jérôme Boateng"
+    ],
+    "answer": 0,
+    "difficulty": "Difficile",
+    "category": "Coupe du monde",
+    "explanation": "Mats Hummels a marqué de la tête."
   }
 ];
 window.QUIZ_QUESTIONS = window.QUIZ_QUESTIONS_EN;

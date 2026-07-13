@@ -48,7 +48,7 @@ function applyConfig(){
   if($('heroMatch')) $('heroMatch').textContent = title;
   if($('heroStage')) $('heroStage').textContent = `${m.stage || 'Quarter-final'} countdown`;
   if($('metaCompetition')) $('metaCompetition').textContent = `⚽ ${m.competition || m.stage || 'World Cup'}`;
-  if($('metaDate')) $('metaDate').textContent = `📅 ${matchDate().toLocaleDateString([], {day:'numeric', month:'long', year:'numeric'})}`;
+  if($('metaDate')) $('metaDate').textContent = `📅 ${matchDate().toLocaleDateString(currentLang()==='fr'?'fr-FR':undefined, {day:'numeric', month:'long', year:'numeric'})}`;
   if($('metaVenue')) $('metaVenue').textContent = `🏟️ ${m.venue || 'Venue TBC'}`;
   if($('dashMatch')) $('dashMatch').textContent = title;
   if($('dashProgress')) $('dashProgress').textContent = `${m.stage || 'Quarter-final'} stage`;
@@ -72,10 +72,10 @@ function updateDetectedLocalTime(){
   const el=$('localTimeExtra'); if(!el) return;
   try{
     const zone=Intl.DateTimeFormat().resolvedOptions().timeZone || 'Device timezone';
-    const formatted=matchDate().toLocaleString([], {weekday:'short', day:'numeric', month:'short', hour:'2-digit', minute:'2-digit', timeZone:zone});
+    const formatted=matchDate().toLocaleString(currentLang()==='fr'?'fr-FR':undefined, {weekday:'short', day:'numeric', month:'short', hour:'2-digit', minute:'2-digit', timeZone:zone});
     el.textContent=formatted;
     el.title=`Detected automatically: ${zone}`;
-  }catch(e){ el.textContent=matchDate().toLocaleString([], {dateStyle:'medium', timeStyle:'short'}); }
+  }catch(e){ el.textContent=matchDate().toLocaleString(currentLang()==='fr'?'fr-FR':undefined, {dateStyle:'medium', timeStyle:'short'}); }
 }
 function tick(){
   let diff = Math.max(0, matchDate() - new Date());
@@ -85,7 +85,7 @@ function tick(){
   const s = Math.floor(diff/1000);
   if($('countdown')) $('countdown').innerHTML = [d,h,m,s].map(v => `<span>${String(v).padStart(2,'0')}</span>`).join('');
   if($('dashCountdown')) $('dashCountdown').textContent = `${d} days ${h}h ${m}m`;
-  if($('kickoffLocal')) $('kickoffLocal').textContent = 'Kick-off in your local time: ' + matchDate().toLocaleString([], { dateStyle:'full', timeStyle:'short' });
+  if($('kickoffLocal')) $('kickoffLocal').textContent = tr('Kick-off in your local time: ','Coup d’envoi à votre heure locale : ') + matchDate().toLocaleString(currentLang()==='fr'?'fr-FR':undefined, { dateStyle:'full', timeStyle:'short' });
   renderMatchStatus();
 }
 function fillScorers(){ const scorers=getContent().scorers || FALLBACK_CONTENT.scorers; const sel=$('firstScorer'); if(sel){ sel.innerHTML=''; scorers.forEach(x => sel.add(new Option(x,x))); } const potm=$('playerOfMatch'); if(potm){ potm.innerHTML=''; (getContent().squad||[]).map(p=>p.name).forEach(n=>potm.add(new Option(n,n))); } }
@@ -114,7 +114,7 @@ function pickBalancedQuiz(source, usedQuestions){
   const chosen=[];
   const categories=new Set();
   const take=(difficulty,count)=>{
-    const candidates=shuffle(pool.filter(q=>q.difficulty===difficulty&&!chosen.includes(q)));
+    const equivalents=difficulty==='Medium'?['Medium','Moyen']:['Hard','Difficile']; const candidates=shuffle(pool.filter(q=>equivalents.includes(q.difficulty)&&!chosen.includes(q)));
     for(const q of candidates){
       if(chosen.length>=5||count<=0)break;
       if(!categories.has(q.category)){chosen.push(q);categories.add(q.category);count--;}
@@ -126,10 +126,10 @@ function pickBalancedQuiz(source, usedQuestions){
   };
   take('Medium',3); take('Hard',2);
   for(const q of shuffle(pool)){if(chosen.length>=5)break;if(!chosen.includes(q))chosen.push(q);}
-  return chosen.sort((a,b)=>(a.difficulty==='Hard')-(b.difficulty==='Hard'));
+  return chosen.sort((a,b)=>(['Hard','Difficile'].includes(a.difficulty)?1:0)-(['Hard','Difficile'].includes(b.difficulty)?1:0));
 }
 function initQuiz(){
-  const source=getQuiz().filter(validQuestion).filter(q=>q.difficulty==='Medium'||q.difficulty==='Hard');
+  const source=getQuiz().filter(validQuestion).filter(q=>['Medium','Hard','Moyen','Difficile'].includes(q.difficulty));
   const quizKey='fr_wc_quiz_used_'+currentLang();
   const used=safeStoreGet(quizKey, []);
   currentQuiz=pickBalancedQuiz(source,used);
@@ -146,7 +146,7 @@ function checkQuiz(){
   const previousBest=safeStoreGet('fr_wc_quiz_best',0); if(score>previousBest)safeStoreSet('fr_wc_quiz_best',score);
   let streak=safeStoreGet('fr_wc_quiz_streak',0); streak=score===5?streak+1:0; safeStoreSet('fr_wc_quiz_streak',streak);
   if($('quizStreak')) $('quizStreak').textContent=streak; if($('quizBest')) $('quizBest').textContent=Math.max(score,previousBest)+'/5';
-  const titles=['Back to training','Needs more caps','Matchday regular','Strong supporter','France expert','Les Bleus legend'];
+  const titles=currentLang()==='fr'?['Retour à l’entraînement','Encore quelques sélections','Supporter régulier','Très bon supporter','Expert des Bleus','Légende des Bleus']:['Back to training','Needs more caps','Matchday regular','Strong supporter','France expert','Les Bleus legend'];
   if($('quizResult')) $('quizResult').textContent=currentLang()==='fr'?`${titles[score]} : ${score}/5. Les explications sont maintenant affichées.`:`${titles[score]}: ${score}/5. Explanations are now shown.`;
   if(score===5)launchCelebration();
 }
@@ -267,7 +267,7 @@ async function loadWeather(){
     const url=`https://api.open-meteo.com/v1/forecast?latitude=${encodeURIComponent(w.latitude)}&longitude=${encodeURIComponent(w.longitude)}&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,wind_speed_10m_max&temperature_unit=celsius&wind_speed_unit=kmh&timezone=auto&start_date=${day}&end_date=${day}`;
     const res=await fetch(url,{cache:'no-store'}); if(!res.ok)throw new Error('weather');
     const d=await res.json(), x=d.daily||{}, code=(x.weather_code||[])[0];
-    const labels={0:'Clear',1:'Mainly clear',2:'Partly cloudy',3:'Overcast',45:'Foggy',51:'Light drizzle',61:'Rain',63:'Moderate rain',65:'Heavy rain',80:'Rain showers',95:'Thunderstorms'};
-    box.innerHTML=`<div class="weather-main"><strong>${esc(labels[code]||'Forecast available')}</strong><span>${Math.round((x.temperature_2m_max||[])[0])}°C high</span></div><div class="weather-stats"><span>Low <b>${Math.round((x.temperature_2m_min||[])[0])}°C</b></span><span>Rain <b>${Math.round((x.precipitation_probability_max||[])[0])}%</b></span><span>Wind <b>${Math.round((x.wind_speed_10m_max||[])[0])} km/h</b></span></div><small>Forecast for ${esc(w.label||match().venue||'the stadium')}. Weather can change.</small>`;
-  }catch(e){box.innerHTML='<p>Live weather is temporarily unavailable.</p><a class="button-link" target="_blank" rel="noopener" href="https://www.weather.gov/fwd/">Check weather</a>';}
+    const labels=currentLang()==='fr'?{0:'Ciel dégagé',1:'Globalement dégagé',2:'Partiellement nuageux',3:'Couvert',45:'Brouillard',51:'Bruine légère',61:'Pluie',63:'Pluie modérée',65:'Forte pluie',80:'Averses',95:'Orages'}:{0:'Clear',1:'Mainly clear',2:'Partly cloudy',3:'Overcast',45:'Foggy',51:'Light drizzle',61:'Rain',63:'Moderate rain',65:'Heavy rain',80:'Rain showers',95:'Thunderstorms'};
+    box.innerHTML=`<div class="weather-main"><strong>${esc(labels[code]||tr('Forecast available','Prévisions disponibles'))}</strong><span>${Math.round((x.temperature_2m_max||[])[0])}°C ${tr('high','max.')}</span></div><div class="weather-stats"><span>${tr('Low','Min.')} <b>${Math.round((x.temperature_2m_min||[])[0])}°C</b></span><span>${tr('Rain','Pluie')} <b>${Math.round((x.precipitation_probability_max||[])[0])}%</b></span><span>${tr('Wind','Vent')} <b>${Math.round((x.wind_speed_10m_max||[])[0])} km/h</b></span></div><small>${tr('Forecast for','Prévisions pour')} ${esc(w.label||match().venue||tr('the stadium','le stade'))}. ${tr('Weather can change.','Les conditions peuvent évoluer.')}</small>`;
+  }catch(e){box.innerHTML=`<p>${tr('Live weather is temporarily unavailable.','La météo en direct est temporairement indisponible.')}</p><a class="button-link" target="_blank" rel="noopener" href="https://www.weather.gov/fwd/">${tr('Check weather','Voir la météo')}</a>`;}
 }
