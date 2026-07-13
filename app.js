@@ -18,12 +18,15 @@ function cfg(){ return window.SITE_CONFIG || {}; }
 function match(){ return cfg().match || {}; }
 function matchDate(){ return new Date(match().dateISO || '2026-07-15T20:00:00+01:00'); }
 function getContent(){ return window.ENGLAND_CONTENT || FALLBACK_CONTENT; }
-function getQuiz(){ return Array.isArray(window.QUIZ_QUESTIONS) && window.QUIZ_QUESTIONS.length ? window.QUIZ_QUESTIONS : FALLBACK_QUIZ; }
+function currentLang(){ return window.franceLang || localStorage.getItem('france_lang') || 'fr'; }
+function tr(en,fr){ return currentLang()==='fr'?fr:en; }
+function getQuiz(){ const bank=currentLang()==='fr'?window.QUIZ_QUESTIONS_FR:window.QUIZ_QUESTIONS_EN; return Array.isArray(bank)&&bank.length?bank:FALLBACK_QUIZ; }
 function esc(s){ return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c])); }
 function safeStoreGet(key, fallback){ try{return JSON.parse(localStorage.getItem(key)||JSON.stringify(fallback));}catch{return fallback;} }
 function safeStoreSet(key, value){ try{localStorage.setItem(key, JSON.stringify(value));}catch{} }
 
 document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('france-language-change',()=>{ initQuiz(); updatePrediction(); });
 function init(){
   applyConfig();
   fillScorers();
@@ -127,23 +130,24 @@ function pickBalancedQuiz(source, usedQuestions){
 }
 function initQuiz(){
   const source=getQuiz().filter(validQuestion).filter(q=>q.difficulty==='Medium'||q.difficulty==='Hard');
-  const used=safeStoreGet('fr_wc_quiz_used', []);
+  const quizKey='fr_wc_quiz_used_'+currentLang();
+  const used=safeStoreGet(quizKey, []);
   currentQuiz=pickBalancedQuiz(source,used);
-  safeStoreSet('fr_wc_quiz_used', [...new Set([...used,...currentQuiz.map(q=>q.question)])].slice(-80));
+  safeStoreSet(quizKey, [...new Set([...used,...currentQuiz.map(q=>q.question)])].slice(-80));
   if($('quizResult')) $('quizResult').textContent='';
   if($('quizStreak')) $('quizStreak').textContent=safeStoreGet('fr_wc_quiz_streak',0);
   if($('quizBest')) $('quizBest').textContent=safeStoreGet('fr_wc_quiz_best',0)+'/5';
-  if($('quizContainer')) $('quizContainer').innerHTML=currentQuiz.map((q,i)=>`<div class="question" data-i="${i}"><div class="q-head"><strong>${i+1}. ${esc(q.question)}</strong><span class="badge">${esc(q.category||'France')}</span></div><div class="options">${[...q.options].map((o,j)=>({o,j})).sort(()=>Math.random()-.5).map(x=>`<label class="option"><input type="radio" name="q${i}" value="${x.j}"><span>${esc(x.o)}</span></label>`).join('')}</div><p class="explanation"><b>${esc(q.difficulty)}:</b> ${esc(q.explanation||'')}</p></div>`).join('') || '<p>Quiz loading problem. Please refresh the page.</p>';
+  if($('quizContainer')) $('quizContainer').innerHTML=currentQuiz.map((q,i)=>`<div class="question" data-i="${i}"><div class="q-head"><strong>${i+1}. ${esc(q.question)}</strong><span class="badge">${esc(q.category||'France')}</span></div><div class="options">${[...q.options].map((o,j)=>({o,j})).sort(()=>Math.random()-.5).map(x=>`<label class="option"><input type="radio" name="q${i}" value="${x.j}"><span>${esc(x.o)}</span></label>`).join('')}</div><p class="explanation"><b>${esc(q.difficulty)}:</b> ${esc(q.explanation||'')}</p></div>`).join('') || `<p>${tr('Quiz loading problem. Please refresh the page.','Problème de chargement du quiz. Actualisez la page.')}</p>`;
 }
 function checkQuiz(){
   let score=0, answered=0;
   document.querySelectorAll('.question').forEach((el,i)=>{ const q=currentQuiz[i]; if(!q)return; const chosen=el.querySelector('input:checked'); if(chosen)answered++; el.classList.add('reviewed'); el.querySelectorAll('.option').forEach(opt=>{ const j=Number(opt.querySelector('input').value); opt.classList.toggle('correct',j===q.answer); opt.classList.toggle('wrong',chosen&&Number(chosen.value)===j&&j!==q.answer); }); if(chosen&&Number(chosen.value)===q.answer)score++; });
-  if(answered<5){ if($('quizResult')) $('quizResult').textContent=`You answered ${answered}/5. Unanswered questions count as incorrect.`; }
+  if(answered<5){ if($('quizResult')) $('quizResult').textContent=tr(`You answered ${answered}/5. Unanswered questions count as incorrect.`,`Vous avez répondu à ${answered}/5 questions. Les questions sans réponse sont comptées comme incorrectes.`); }
   const previousBest=safeStoreGet('fr_wc_quiz_best',0); if(score>previousBest)safeStoreSet('fr_wc_quiz_best',score);
   let streak=safeStoreGet('fr_wc_quiz_streak',0); streak=score===5?streak+1:0; safeStoreSet('fr_wc_quiz_streak',streak);
   if($('quizStreak')) $('quizStreak').textContent=streak; if($('quizBest')) $('quizBest').textContent=Math.max(score,previousBest)+'/5';
   const titles=['Back to training','Needs more caps','Matchday regular','Strong supporter','France expert','Les Bleus legend'];
-  if($('quizResult')) $('quizResult').textContent=`${titles[score]}: ${score}/5. Explanations are now shown.`;
+  if($('quizResult')) $('quizResult').textContent=currentLang()==='fr'?`${titles[score]} : ${score}/5. Les explications sont maintenant affichées.`:`${titles[score]}: ${score}/5. Explanations are now shown.`;
   if(score===5)launchCelebration();
 }
 function confetti(){ if(matchMedia('(prefers-reduced-motion: reduce)').matches) return; for(let i=0;i<120;i++){ const p=document.createElement('i'); p.className='confetti-piece'; p.textContent=['✦','★','◆','🇫🇷','🏆'][i%5]; p.style.left=Math.random()*100+'vw'; p.style.animationDelay=(Math.random()*.8)+'s'; p.style.fontSize=(14+Math.random()*20)+'px'; document.body.appendChild(p); setTimeout(()=>p.remove(),4200); } }
