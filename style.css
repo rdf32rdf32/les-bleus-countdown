@@ -79,3 +79,5 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 .language-toggle{min-width:86px;padding:.65rem .9rem;border:2px solid #fff;border-radius:999px;background:#fff;color:#07152f;font-weight:900;letter-spacing:.04em;box-shadow:0 4px 16px rgba(0,0,0,.2);cursor:pointer}
 .language-toggle:hover,.language-toggle:focus-visible{transform:translateY(-1px);outline:3px solid #ed2939;outline-offset:2px}
 @media (max-width:760px){.language-toggle{width:100%;margin:.35rem 0 .65rem;font-size:1rem}}
+
+.language-switch{display:flex;align-items:center}.language-toggle{min-width:126px;font-weight:900;border:2px solid rgba(255,255,255,.7);box-shadow:0 4px 14px rgba(0,0,0,.18)}

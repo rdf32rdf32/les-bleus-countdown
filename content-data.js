@@ -1,65 +1,12 @@
-window.FRANCE_CONTENT = {
-  squad: [
-    {name:'Mike Maignan',position:'Goalkeeper',club:'AC Milan'},
-    {name:'Brice Samba',position:'Goalkeeper',club:'Rennes'},
-    {name:'Lucas Chevalier',position:'Goalkeeper',club:'Lille'},
-    {name:'William Saliba',position:'Defender',club:'Arsenal'},
-    {name:'Ibrahima Konaté',position:'Defender',club:'Liverpool'},
-    {name:'Dayot Upamecano',position:'Defender',club:'Bayern Munich'},
-    {name:'Jules Koundé',position:'Defender',club:'Barcelona'},
-    {name:'Theo Hernandez',position:'Defender',club:'AC Milan'},
-    {name:'Lucas Hernandez',position:'Defender',club:'Paris Saint-Germain'},
-    {name:'Benjamin Pavard',position:'Defender',club:'Inter Milan'},
-    {name:'Jonathan Clauss',position:'Defender',club:'Nice'},
-    {name:'Aurélien Tchouaméni',position:'Midfielder',club:'Real Madrid'},
-    {name:'Eduardo Camavinga',position:'Midfielder',club:'Real Madrid'},
-    {name:'Adrien Rabiot',position:'Midfielder',club:'Marseille'},
-    {name:'Warren Zaïre-Emery',position:'Midfielder',club:'Paris Saint-Germain'},
-    {name:'Youssouf Fofana',position:'Midfielder',club:'AC Milan'},
-    {name:'Kylian Mbappé',position:'Forward',club:'Real Madrid'},
-    {name:'Ousmane Dembélé',position:'Forward',club:'Paris Saint-Germain'},
-    {name:'Marcus Thuram',position:'Forward',club:'Inter Milan'},
-    {name:'Randal Kolo Muani',position:'Forward',club:'Paris Saint-Germain'},
-    {name:'Bradley Barcola',position:'Forward',club:'Paris Saint-Germain'},
-    {name:'Michael Olise',position:'Forward',club:'Bayern Munich'},
-    {name:'Kingsley Coman',position:'Forward',club:'Bayern Munich'}
-  ],
-  scorers: ['William Saliba','Ibrahima Konaté','Dayot Upamecano','Jules Koundé','Theo Hernandez','Benjamin Pavard','Aurélien Tchouaméni','Eduardo Camavinga','Adrien Rabiot','Warren Zaïre-Emery','Youssouf Fofana','Kylian Mbappé','Ousmane Dembélé','Marcus Thuram','Randal Kolo Muani','Bradley Barcola','Michael Olise','Kingsley Coman'],
-  recentForm: ['W','W','W','W','W'],
-  quotes: [
-    {text:'Football is played with the head. Your feet are just the tools.',by:'Andrea Pirlo'},
-    {text:'The more difficult the victory, the greater the happiness in winning.',by:'Pelé'},
-    {text:'You have to fight to reach your dream. You have to sacrifice and work hard for it.',by:'Lionel Messi'},
-    {text:'I always want more. Whether it is a goal or winning a game, I am never satisfied.',by:'Kylian Mbappé'},
-    {text:'A champion is afraid of losing. Everyone else is afraid of winning.',by:'Billie Jean King'}
-  ],
-  spotlightFacts: {
-    'Kylian Mbappé':['France captain and one of the leading scorers in the national team’s history.','Won the 2018 World Cup as a teenager.','Scored a hat-trick in the 2022 World Cup final.'],
-    'Ousmane Dembélé':['A two-footed winger known for acceleration and creativity.','Won the 2018 World Cup with France.','Can operate on either flank or centrally.'],
-    'Aurélien Tchouaméni':['A defensive midfielder valued for positioning and ball recovery.','Scored for France in the 2022 World Cup quarter-final against England.','Can also play in central defence.'],
-    'William Saliba':['A composed central defender with pace and strong distribution.','Established himself as a regular for France during the 2020s.','Known for one-on-one defending and carrying the ball forward.']
-  },
-  facts: [
-    'France won the men’s World Cup in 1998 and 2018.',
-    'France reached four men’s World Cup finals between 1998 and 2022.',
-    'Didier Deschamps won the World Cup as France captain in 1998 and as coach in 2018.',
-    'Zinedine Zidane scored twice in the 1998 World Cup final.',
-    'Kylian Mbappé scored in the 2018 World Cup final at the age of 19.',
-    'Just Fontaine scored a record 13 goals at the 1958 World Cup.',
-    'France won the European Championship in 1984 and 2000.',
-    'Michel Platini scored nine goals at Euro 1984.',
-    'France won the 2001 and 2003 FIFA Confederations Cups.',
-    'The Stade de France hosted the 1998 World Cup final.',
-    'France’s first men’s international was played in 1904.',
-    'Raymond Kopa won the Ballon d’Or in 1958.',
-    'Jean-Pierre Papin won the Ballon d’Or in 1991.',
-    'France beat Brazil 3–0 in the 1998 World Cup final.',
-    'France beat Croatia 4–2 in the 2018 World Cup final.',
-    'Antoine Griezmann won the Golden Boot at Euro 2016.',
-    'Hugo Lloris captained France to the 2018 World Cup title.',
-    'France reached the 2006 World Cup final after beating Portugal in the semi-final.',
-    'Lilian Thuram scored both goals in France’s 1998 semi-final win over Croatia.',
-    'France won the UEFA Nations League in 2021.'
-  ]
-};
-window.ENGLAND_CONTENT = window.FRANCE_CONTENT;
+const FR_MODE=(localStorage.getItem('france_lang')||'en')==='fr';
+const EN={squad:[
+{name:'Mike Maignan',position:'Goalkeeper',club:'AC Milan'},{name:'Brice Samba',position:'Goalkeeper',club:'Rennes'},{name:'Lucas Chevalier',position:'Goalkeeper',club:'Lille'},{name:'William Saliba',position:'Defender',club:'Arsenal'},{name:'Ibrahima Konaté',position:'Defender',club:'Liverpool'},{name:'Dayot Upamecano',position:'Defender',club:'Bayern Munich'},{name:'Jules Koundé',position:'Defender',club:'Barcelona'},{name:'Theo Hernandez',position:'Defender',club:'AC Milan'},{name:'Lucas Hernandez',position:'Defender',club:'Paris Saint-Germain'},{name:'Benjamin Pavard',position:'Defender',club:'Inter Milan'},{name:'Jonathan Clauss',position:'Defender',club:'Nice'},{name:'Aurélien Tchouaméni',position:'Midfielder',club:'Real Madrid'},{name:'Eduardo Camavinga',position:'Midfielder',club:'Real Madrid'},{name:'Adrien Rabiot',position:'Midfielder',club:'Marseille'},{name:'Warren Zaïre-Emery',position:'Midfielder',club:'Paris Saint-Germain'},{name:'Youssouf Fofana',position:'Midfielder',club:'AC Milan'},{name:'Kylian Mbappé',position:'Forward',club:'Real Madrid'},{name:'Ousmane Dembélé',position:'Forward',club:'Paris Saint-Germain'},{name:'Marcus Thuram',position:'Forward',club:'Inter Milan'},{name:'Randal Kolo Muani',position:'Forward',club:'Paris Saint-Germain'},{name:'Bradley Barcola',position:'Forward',club:'Paris Saint-Germain'},{name:'Michael Olise',position:'Forward',club:'Bayern Munich'},{name:'Kingsley Coman',position:'Forward',club:'Bayern Munich'}],
+scorers:['William Saliba','Ibrahima Konaté','Dayot Upamecano','Jules Koundé','Theo Hernandez','Benjamin Pavard','Aurélien Tchouaméni','Eduardo Camavinga','Adrien Rabiot','Warren Zaïre-Emery','Youssouf Fofana','Kylian Mbappé','Ousmane Dembélé','Marcus Thuram','Randal Kolo Muani','Bradley Barcola','Michael Olise','Kingsley Coman'],recentForm:['W','W','W','W','W'],
+quotes:[{text:'I always want more. Whether it is a goal or winning a game, I am never satisfied.',by:'Kylian Mbappé'},{text:'The more difficult the victory, the greater the happiness in winning.',by:'Pelé'},{text:'You have to fight to reach your dream. You have to sacrifice and work hard for it.',by:'Lionel Messi'}],
+spotlightFacts:{'Kylian Mbappé':['France captain and forward.','Won the 2018 World Cup as a teenager.','Scored a hat-trick in the 2022 World Cup final.'],'Ousmane Dembélé':['A two-footed winger known for acceleration and creativity.','Won the 2018 World Cup with France.','Can operate on either flank or centrally.'],'Aurélien Tchouaméni':['A midfielder valued for positioning and ball recovery.','Scored against England at the 2022 World Cup.','Can also play in central defence.'],'William Saliba':['A composed central defender with pace and strong distribution.','A regular for France during the 2020s.','Known for one-on-one defending.']},
+facts:['France won the men’s World Cup in 1998 and 2018.','Didier Deschamps won the World Cup as captain in 1998 and as coach in 2018.','Just Fontaine scored a record 13 goals at the 1958 World Cup.','France won the European Championship in 1984 and 2000.','Hugo Lloris captained France to the 2018 World Cup title.']};
+const FR={...EN,squad:EN.squad.map(p=>({...p,position:({Goalkeeper:'Gardien',Defender:'Défenseur',Midfielder:'Milieu',Forward:'Attaquant'})[p.position]})),recentForm:['V','V','V','V','V'],
+quotes:[{text:'Je veux toujours plus. Que ce soit un but ou une victoire, je ne suis jamais satisfait.',by:'Kylian Mbappé'},{text:'Plus la victoire est difficile, plus le bonheur de gagner est grand.',by:'Pelé'},{text:'Il faut se battre pour atteindre son rêve. Il faut faire des sacrifices et travailler dur.',by:'Lionel Messi'}],
+spotlightFacts:{'Kylian Mbappé':['Capitaine et attaquant de l’équipe de France.','Champion du monde en 2018 alors qu’il était adolescent.','Auteur d’un triplé en finale de la Coupe du monde 2022.'],'Ousmane Dembélé':['Ailier capable de jouer des deux pieds, connu pour son accélération et sa créativité.','Champion du monde 2018 avec la France.','Peut jouer sur les deux côtés ou dans l’axe.'],'Aurélien Tchouaméni':['Milieu apprécié pour son placement et sa récupération du ballon.','Buteur contre l’Angleterre à la Coupe du monde 2022.','Peut aussi jouer en défense centrale.'],'William Saliba':['Défenseur central calme, rapide et à l’aise dans la relance.','Régulièrement sélectionné avec les Bleus dans les années 2020.','Réputé pour sa défense en un contre un.']},
+facts:['La France a remporté la Coupe du monde masculine en 1998 et en 2018.','Didier Deschamps a gagné la Coupe du monde comme capitaine en 1998 puis comme sélectionneur en 2018.','Just Fontaine a marqué un record de 13 buts lors de la Coupe du monde 1958.','La France a remporté le Championnat d’Europe en 1984 et en 2000.','Hugo Lloris était le capitaine de la France lors du titre mondial de 2018.']};
+window.FRANCE_CONTENT=FR_MODE?FR:EN;window.ENGLAND_CONTENT=window.FRANCE_CONTENT;

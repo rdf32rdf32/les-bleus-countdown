@@ -1,652 +1,844 @@
-window.QUIZ_QUESTIONS = [
+const FR_MODE=(localStorage.getItem('france_lang')||'en')==='fr';
+const BILINGUAL_QUIZ=[
   {
-    "question": "Who captained France to the 1998 World Cup title?",
-    "options": [
-      "Didier Deschamps",
-      "Zinedine Zidane",
-      "Marcel Desailly",
-      "Laurent Blanc"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "World Cup",
-    "explanation": "Didier Deschamps captained France in 1998."
+    "en": {
+      "question": "Who captained France to the 1998 World Cup title?",
+      "options": [
+        "Didier Deschamps",
+        "Zinedine Zidane",
+        "Marcel Desailly",
+        "Laurent Blanc"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "Didier Deschamps captained France in 1998."
+    },
+    "fr": {
+      "question": "Qui était le capitaine de la France lors du titre mondial de 1998 ?",
+      "options": [
+        "Didier Deschamps",
+        "Zinédine Zidane",
+        "Marcel Desailly",
+        "Laurent Blanc"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "Didier Deschamps portait le brassard en 1998."
+    }
   },
   {
-    "question": "Which team did France beat in the 1998 World Cup final?",
-    "options": [
-      "Brazil",
-      "Croatia",
-      "Italy",
-      "Germany"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "World Cup",
-    "explanation": "France beat Brazil 3–0 in Saint-Denis."
+    "en": {
+      "question": "Which team did France beat in the 1998 World Cup final?",
+      "options": [
+        "Brazil",
+        "Croatia",
+        "Italy",
+        "Germany"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "France beat Brazil 3–0."
+    },
+    "fr": {
+      "question": "Quelle équipe la France a-t-elle battue en finale de la Coupe du monde 1998 ?",
+      "options": [
+        "Brésil",
+        "Croatie",
+        "Italie",
+        "Allemagne"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "La France a battu le Brésil 3-0."
+    }
   },
   {
-    "question": "Who scored twice in the 1998 World Cup final?",
-    "options": [
-      "Zinedine Zidane",
-      "Thierry Henry",
-      "Youri Djorkaeff",
-      "Emmanuel Petit"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "World Cup",
-    "explanation": "Zidane scored two first-half headers."
+    "en": {
+      "question": "Who scored twice in the 1998 World Cup final?",
+      "options": [
+        "Zinedine Zidane",
+        "Thierry Henry",
+        "Youri Djorkaeff",
+        "Emmanuel Petit"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "Zidane scored two headers."
+    },
+    "fr": {
+      "question": "Qui a marqué deux buts en finale de la Coupe du monde 1998 ?",
+      "options": [
+        "Zinédine Zidane",
+        "Thierry Henry",
+        "Youri Djorkaeff",
+        "Emmanuel Petit"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "Zinédine Zidane a marqué deux fois de la tête."
+    }
   },
   {
-    "question": "Who scored France’s third goal in the 1998 World Cup final?",
-    "options": [
-      "Emmanuel Petit",
-      "Patrick Vieira",
-      "Robert Pirès",
-      "Christophe Dugarry"
-    ],
-    "answer": 0,
-    "difficulty": "Hard",
-    "category": "World Cup",
-    "explanation": "Petit completed the 3–0 win in stoppage time."
+    "en": {
+      "question": "Who scored France’s third goal in the 1998 final?",
+      "options": [
+        "Emmanuel Petit",
+        "Patrick Vieira",
+        "Robert Pirès",
+        "Christophe Dugarry"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "Petit scored in stoppage time."
+    },
+    "fr": {
+      "question": "Qui a inscrit le troisième but français en finale de 1998 ?",
+      "options": [
+        "Emmanuel Petit",
+        "Patrick Vieira",
+        "Robert Pirès",
+        "Christophe Dugarry"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "Emmanuel Petit a marqué dans le temps additionnel."
+    }
   },
   {
-    "question": "Which defender scored twice against Croatia in the 1998 semi-final?",
-    "options": [
-      "Lilian Thuram",
-      "Laurent Blanc",
-      "Bixente Lizarazu",
-      "Marcel Desailly"
-    ],
-    "answer": 0,
-    "difficulty": "Hard",
-    "category": "World Cup",
-    "explanation": "Thuram scored both French goals, his only two for France."
+    "en": {
+      "question": "Which defender scored twice against Croatia in the 1998 semi-final?",
+      "options": [
+        "Lilian Thuram",
+        "Laurent Blanc",
+        "Bixente Lizarazu",
+        "Marcel Desailly"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "Thuram scored both French goals."
+    },
+    "fr": {
+      "question": "Quel défenseur a marqué deux fois contre la Croatie en demi-finale de 1998 ?",
+      "options": [
+        "Lilian Thuram",
+        "Laurent Blanc",
+        "Bixente Lizarazu",
+        "Marcel Desailly"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "Lilian Thuram a inscrit les deux buts français."
+    }
   },
   {
-    "question": "Who scored the golden goal that sent France past Paraguay in 1998?",
-    "options": [
-      "Laurent Blanc",
-      "Thierry Henry",
-      "David Trezeguet",
-      "Zinedine Zidane"
-    ],
-    "answer": 0,
-    "difficulty": "Hard",
-    "category": "World Cup",
-    "explanation": "Blanc scored the first golden goal in World Cup history."
+    "en": {
+      "question": "Who scored the golden goal against Paraguay in 1998?",
+      "options": [
+        "Laurent Blanc",
+        "Thierry Henry",
+        "David Trezeguet",
+        "Zinedine Zidane"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "Blanc scored the first golden goal in World Cup history."
+    },
+    "fr": {
+      "question": "Qui a marqué le but en or contre le Paraguay en 1998 ?",
+      "options": [
+        "Laurent Blanc",
+        "Thierry Henry",
+        "David Trezeguet",
+        "Zinédine Zidane"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "Laurent Blanc a inscrit le premier but en or de l’histoire de la Coupe du monde."
+    }
   },
   {
-    "question": "Which nation did France beat on penalties in the 1998 quarter-final?",
-    "options": [
-      "Italy",
-      "Germany",
-      "Netherlands",
-      "Argentina"
-    ],
-    "answer": 0,
-    "difficulty": "Hard",
-    "category": "World Cup",
-    "explanation": "France eliminated Italy after a goalless draw."
+    "en": {
+      "question": "Which team did France eliminate on penalties in the 1998 quarter-final?",
+      "options": [
+        "Italy",
+        "Germany",
+        "Netherlands",
+        "Argentina"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "France eliminated Italy after a 0–0 draw."
+    },
+    "fr": {
+      "question": "Quelle équipe la France a-t-elle éliminée aux tirs au but en quart de finale en 1998 ?",
+      "options": [
+        "Italie",
+        "Allemagne",
+        "Pays-Bas",
+        "Argentine"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "La France a éliminé l’Italie après un match nul 0-0."
+    }
   },
   {
-    "question": "How many men’s World Cups had France won before the 2026 tournament?",
-    "options": [
-      "Two",
-      "One",
-      "Three",
-      "Four"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "World Cup",
-    "explanation": "France won in 1998 and 2018."
+    "en": {
+      "question": "How many men’s World Cups had France won before 2026?",
+      "options": [
+        "Two",
+        "One",
+        "Three",
+        "Four"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "France won in 1998 and 2018."
+    },
+    "fr": {
+      "question": "Combien de Coupes du monde masculines la France avait-elle remportées avant 2026 ?",
+      "options": [
+        "Deux",
+        "Une",
+        "Trois",
+        "Quatre"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "La France a été championne en 1998 et en 2018."
+    }
   },
   {
-    "question": "Which team did France beat in the 2018 World Cup final?",
-    "options": [
-      "Croatia",
-      "Belgium",
-      "Argentina",
-      "Uruguay"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "World Cup",
-    "explanation": "France beat Croatia 4–2 in Moscow."
+    "en": {
+      "question": "Which team did France beat in the 2018 World Cup final?",
+      "options": [
+        "Croatia",
+        "Belgium",
+        "Argentina",
+        "Uruguay"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "France beat Croatia 4–2."
+    },
+    "fr": {
+      "question": "Quelle équipe la France a-t-elle battue en finale de la Coupe du monde 2018 ?",
+      "options": [
+        "Croatie",
+        "Belgique",
+        "Argentine",
+        "Uruguay"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "La France a battu la Croatie 4-2."
+    }
   },
   {
-    "question": "Who was France coach at the 2018 World Cup?",
-    "options": [
-      "Didier Deschamps",
-      "Laurent Blanc",
-      "Raymond Domenech",
-      "Aimé Jacquet"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "World Cup",
-    "explanation": "Deschamps became a champion as both captain and coach."
+    "en": {
+      "question": "Who coached France to the 2018 World Cup title?",
+      "options": [
+        "Didier Deschamps",
+        "Laurent Blanc",
+        "Raymond Domenech",
+        "Aimé Jacquet"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "Didier Deschamps was the coach."
+    },
+    "fr": {
+      "question": "Qui était le sélectionneur de la France lors du titre mondial de 2018 ?",
+      "options": [
+        "Didier Deschamps",
+        "Laurent Blanc",
+        "Raymond Domenech",
+        "Aimé Jacquet"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "Didier Deschamps était le sélectionneur."
+    }
   },
   {
-    "question": "Who scored France’s fourth goal in the 2018 World Cup final?",
-    "options": [
-      "Kylian Mbappé",
-      "Paul Pogba",
-      "Antoine Griezmann",
-      "Olivier Giroud"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "World Cup",
-    "explanation": "Mbappé made the score 4–1."
+    "en": {
+      "question": "Who scored France’s fourth goal in the 2018 World Cup final?",
+      "options": [
+        "Kylian Mbappé",
+        "Paul Pogba",
+        "Antoine Griezmann",
+        "Olivier Giroud"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "Mbappé made the score 4–1."
+    },
+    "fr": {
+      "question": "Qui a inscrit le quatrième but français en finale de la Coupe du monde 2018 ?",
+      "options": [
+        "Kylian Mbappé",
+        "Paul Pogba",
+        "Antoine Griezmann",
+        "Olivier Giroud"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "Kylian Mbappé a porté le score à 4-1."
+    }
   },
   {
-    "question": "Who won the Best Young Player award at the 2018 World Cup?",
-    "options": [
-      "Kylian Mbappé",
-      "Benjamin Pavard",
-      "Lucas Hernandez",
-      "Ousmane Dembélé"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "World Cup",
-    "explanation": "Mbappé won the award at age 19."
+    "en": {
+      "question": "Who won the Best Young Player award at the 2018 World Cup?",
+      "options": [
+        "Kylian Mbappé",
+        "Benjamin Pavard",
+        "Lucas Hernandez",
+        "Ousmane Dembélé"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "Mbappé won the award aged 19."
+    },
+    "fr": {
+      "question": "Qui a remporté le trophée du meilleur jeune joueur de la Coupe du monde 2018 ?",
+      "options": [
+        "Kylian Mbappé",
+        "Benjamin Pavard",
+        "Lucas Hernandez",
+        "Ousmane Dembélé"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "Kylian Mbappé a remporté ce trophée à 19 ans."
+    }
   },
   {
-    "question": "Who scored France’s winner against Belgium in the 2018 semi-final?",
-    "options": [
-      "Samuel Umtiti",
-      "Raphaël Varane",
-      "Paul Pogba",
-      "Antoine Griezmann"
-    ],
-    "answer": 0,
-    "difficulty": "Hard",
-    "category": "World Cup",
-    "explanation": "Umtiti headed in from a corner."
+    "en": {
+      "question": "Who scored France’s winner against Belgium in the 2018 semi-final?",
+      "options": [
+        "Samuel Umtiti",
+        "Raphaël Varane",
+        "Paul Pogba",
+        "Antoine Griezmann"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "Umtiti scored with a header."
+    },
+    "fr": {
+      "question": "Qui a marqué le but de la victoire contre la Belgique en demi-finale en 2018 ?",
+      "options": [
+        "Samuel Umtiti",
+        "Raphaël Varane",
+        "Paul Pogba",
+        "Antoine Griezmann"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "Samuel Umtiti a marqué de la tête."
+    }
   },
   {
-    "question": "Who scored a famous long-range goal against Argentina in 2018?",
-    "options": [
-      "Benjamin Pavard",
-      "N’Golo Kanté",
-      "Blaise Matuidi",
-      "Lucas Hernandez"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "World Cup",
-    "explanation": "Pavard’s strike was voted goal of the tournament."
+    "en": {
+      "question": "Who scored a famous long-range goal against Argentina in 2018?",
+      "options": [
+        "Benjamin Pavard",
+        "N’Golo Kanté",
+        "Blaise Matuidi",
+        "Lucas Hernandez"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "Pavard’s strike was voted goal of the tournament."
+    },
+    "fr": {
+      "question": "Qui a marqué un célèbre but de loin contre l’Argentine en 2018 ?",
+      "options": [
+        "Benjamin Pavard",
+        "N’Golo Kanté",
+        "Blaise Matuidi",
+        "Lucas Hernandez"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "La frappe de Benjamin Pavard a été élue plus beau but du tournoi."
+    }
   },
   {
-    "question": "Who scored a hat-trick for France in the 2022 World Cup final?",
-    "options": [
-      "Kylian Mbappé",
-      "Olivier Giroud",
-      "Antoine Griezmann",
-      "Marcus Thuram"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "World Cup",
-    "explanation": "Mbappé scored all three French goals."
+    "en": {
+      "question": "Who scored a hat-trick for France in the 2022 World Cup final?",
+      "options": [
+        "Kylian Mbappé",
+        "Olivier Giroud",
+        "Antoine Griezmann",
+        "Marcus Thuram"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "Mbappé scored all three French goals."
+    },
+    "fr": {
+      "question": "Qui a inscrit un triplé pour la France en finale de la Coupe du monde 2022 ?",
+      "options": [
+        "Kylian Mbappé",
+        "Olivier Giroud",
+        "Antoine Griezmann",
+        "Marcus Thuram"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "Kylian Mbappé a inscrit les trois buts français."
+    }
   },
   {
-    "question": "Which team beat France in the 2022 World Cup final?",
-    "options": [
-      "Argentina",
-      "Brazil",
-      "Spain",
-      "Germany"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "World Cup",
-    "explanation": "Argentina won on penalties after a 3–3 draw."
+    "en": {
+      "question": "Which team beat France in the 2022 World Cup final?",
+      "options": [
+        "Argentina",
+        "Brazil",
+        "Spain",
+        "Germany"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "Argentina won on penalties after a 3–3 draw."
+    },
+    "fr": {
+      "question": "Quelle équipe a battu la France en finale de la Coupe du monde 2022 ?",
+      "options": [
+        "Argentine",
+        "Brésil",
+        "Espagne",
+        "Allemagne"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "L’Argentine s’est imposée aux tirs au but après un match nul 3-3."
+    }
   },
   {
-    "question": "Who became France’s record men’s goalscorer during the 2022 World Cup?",
-    "options": [
-      "Olivier Giroud",
-      "Kylian Mbappé",
-      "Thierry Henry",
-      "Antoine Griezmann"
-    ],
-    "answer": 0,
-    "difficulty": "Hard",
-    "category": "Records",
-    "explanation": "Giroud moved past Thierry Henry during the tournament."
+    "en": {
+      "question": "Who became France’s record men’s goalscorer during the 2022 World Cup?",
+      "options": [
+        "Olivier Giroud",
+        "Kylian Mbappé",
+        "Thierry Henry",
+        "Antoine Griezmann"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "Giroud passed Thierry Henry during the tournament."
+    },
+    "fr": {
+      "question": "Qui est devenu le meilleur buteur de l’histoire des Bleus pendant la Coupe du monde 2022 ?",
+      "options": [
+        "Olivier Giroud",
+        "Kylian Mbappé",
+        "Thierry Henry",
+        "Antoine Griezmann"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "Olivier Giroud a dépassé Thierry Henry pendant le tournoi."
+    }
   },
   {
-    "question": "Who holds the record for most goals at a single men’s World Cup?",
-    "options": [
-      "Just Fontaine",
-      "Gerd Müller",
-      "Ronaldo",
-      "Kylian Mbappé"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "Records",
-    "explanation": "Fontaine scored 13 goals in 1958."
+    "en": {
+      "question": "Who holds the record for most goals at a single men’s World Cup?",
+      "options": [
+        "Just Fontaine",
+        "Gerd Müller",
+        "Ronaldo",
+        "Kylian Mbappé"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "Fontaine scored 13 goals in 1958."
+    },
+    "fr": {
+      "question": "Qui détient le record de buts lors d’une seule Coupe du monde masculine ?",
+      "options": [
+        "Just Fontaine",
+        "Gerd Müller",
+        "Ronaldo",
+        "Kylian Mbappé"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "Just Fontaine a marqué 13 buts en 1958."
+    }
   },
   {
-    "question": "In which year did Just Fontaine score 13 World Cup goals?",
-    "options": [
-      "1958",
-      "1954",
-      "1962",
-      "1966"
-    ],
-    "answer": 0,
-    "difficulty": "Hard",
-    "category": "Records",
-    "explanation": "He set the record at Sweden 1958."
+    "en": {
+      "question": "Who won the Ballon d’Or in 1958?",
+      "options": [
+        "Raymond Kopa",
+        "Just Fontaine",
+        "Michel Platini",
+        "Jean-Pierre Papin"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "Raymond Kopa won the award."
+    },
+    "fr": {
+      "question": "Quel Français a remporté le Ballon d’Or en 1958 ?",
+      "options": [
+        "Raymond Kopa",
+        "Just Fontaine",
+        "Michel Platini",
+        "Jean-Pierre Papin"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "Raymond Kopa a remporté le trophée."
+    }
   },
   {
-    "question": "Who won the Ballon d’Or in 1958?",
-    "options": [
-      "Raymond Kopa",
-      "Just Fontaine",
-      "Michel Platini",
-      "Jean-Pierre Papin"
-    ],
-    "answer": 0,
-    "difficulty": "Hard",
-    "category": "History",
-    "explanation": "Kopa won the award in 1958."
+    "en": {
+      "question": "Who scored the golden goal in the Euro 2000 final?",
+      "options": [
+        "David Trezeguet",
+        "Sylvain Wiltord",
+        "Thierry Henry",
+        "Zinedine Zidane"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "Trezeguet scored against Italy."
+    },
+    "fr": {
+      "question": "Qui a marqué le but en or en finale de l’Euro 2000 ?",
+      "options": [
+        "David Trezeguet",
+        "Sylvain Wiltord",
+        "Thierry Henry",
+        "Zinédine Zidane"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "David Trezeguet a marqué contre l’Italie."
+    }
   },
   {
-    "question": "Which France player won the Ballon d’Or in 1991?",
-    "options": [
-      "Jean-Pierre Papin",
-      "Éric Cantona",
-      "Didier Deschamps",
-      "David Ginola"
-    ],
-    "answer": 0,
-    "difficulty": "Hard",
-    "category": "History",
-    "explanation": "Papin won while playing for Marseille."
+    "en": {
+      "question": "Who equalised for France late in the Euro 2000 final?",
+      "options": [
+        "Sylvain Wiltord",
+        "David Trezeguet",
+        "Robert Pirès",
+        "Youri Djorkaeff"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "Wiltord scored in stoppage time."
+    },
+    "fr": {
+      "question": "Qui a égalisé pour la France en fin de finale de l’Euro 2000 ?",
+      "options": [
+        "Sylvain Wiltord",
+        "David Trezeguet",
+        "Robert Pirès",
+        "Youri Djorkaeff"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "Sylvain Wiltord a marqué dans le temps additionnel."
+    }
   },
   {
-    "question": "How many European Championships had France won before Euro 2028?",
-    "options": [
-      "Two",
-      "One",
-      "Three",
-      "Four"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "Euros",
-    "explanation": "France won Euro 1984 and Euro 2000."
+    "en": {
+      "question": "Who was France’s leading scorer at Euro 1984?",
+      "options": [
+        "Michel Platini",
+        "Alain Giresse",
+        "Jean Tigana",
+        "Luis Fernandez"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "Platini scored nine goals."
+    },
+    "fr": {
+      "question": "Qui a été le meilleur buteur français à l’Euro 1984 ?",
+      "options": [
+        "Michel Platini",
+        "Alain Giresse",
+        "Jean Tigana",
+        "Luis Fernandez"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "Michel Platini a marqué neuf buts."
+    }
   },
   {
-    "question": "Who scored nine goals at Euro 1984?",
-    "options": [
-      "Michel Platini",
-      "Alain Giresse",
-      "Jean Tigana",
-      "Dominique Rocheteau"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "Euros",
-    "explanation": "Platini scored nine in five matches."
+    "en": {
+      "question": "Which team did France beat in the Euro 1984 final?",
+      "options": [
+        "Spain",
+        "Portugal",
+        "West Germany",
+        "Belgium"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "France beat Spain 2–0."
+    },
+    "fr": {
+      "question": "Quelle équipe la France a-t-elle battue en finale de l’Euro 1984 ?",
+      "options": [
+        "Espagne",
+        "Portugal",
+        "Allemagne de l’Ouest",
+        "Belgique"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "La France a battu l’Espagne 2-0."
+    }
   },
   {
-    "question": "Which nation did France beat in the Euro 1984 final?",
-    "options": [
-      "Spain",
-      "Portugal",
-      "West Germany",
-      "Belgium"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "Euros",
-    "explanation": "France won 2–0 at the Parc des Princes."
+    "en": {
+      "question": "Who captained France to the 2018 World Cup title?",
+      "options": [
+        "Hugo Lloris",
+        "Raphaël Varane",
+        "Paul Pogba",
+        "Antoine Griezmann"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "Hugo Lloris was captain."
+    },
+    "fr": {
+      "question": "Qui était le capitaine de la France lors du titre mondial de 2018 ?",
+      "options": [
+        "Hugo Lloris",
+        "Raphaël Varane",
+        "Paul Pogba",
+        "Antoine Griezmann"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "Hugo Lloris était le capitaine."
+    }
   },
   {
-    "question": "Who scored France’s golden goal in the Euro 2000 final?",
-    "options": [
-      "David Trezeguet",
-      "Sylvain Wiltord",
-      "Thierry Henry",
-      "Zinedine Zidane"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "Euros",
-    "explanation": "Trezeguet scored in extra time."
+    "en": {
+      "question": "Which country hosted the 1998 World Cup?",
+      "options": [
+        "France",
+        "Germany",
+        "Italy",
+        "Spain"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "France hosted the tournament."
+    },
+    "fr": {
+      "question": "Quel pays a organisé la Coupe du monde 1998 ?",
+      "options": [
+        "France",
+        "Allemagne",
+        "Italie",
+        "Espagne"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "La France a organisé le tournoi."
+    }
   },
   {
-    "question": "Which nation did France beat in the Euro 2000 final?",
-    "options": [
-      "Italy",
-      "Portugal",
-      "Netherlands",
-      "Spain"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "Euros",
-    "explanation": "France beat Italy 2–1 after extra time."
+    "en": {
+      "question": "Where was the 1998 World Cup final played?",
+      "options": [
+        "Stade de France",
+        "Parc des Princes",
+        "Stade Vélodrome",
+        "Stade de Gerland"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "The final was played in Saint-Denis."
+    },
+    "fr": {
+      "question": "Où s’est jouée la finale de la Coupe du monde 1998 ?",
+      "options": [
+        "Stade de France",
+        "Parc des Princes",
+        "Stade Vélodrome",
+        "Stade de Gerland"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "La finale s’est jouée au Stade de France, à Saint-Denis."
+    }
   },
   {
-    "question": "Who equalised late for France in the Euro 2000 final?",
-    "options": [
-      "Sylvain Wiltord",
-      "David Trezeguet",
-      "Robert Pirès",
-      "Youri Djorkaeff"
-    ],
-    "answer": 0,
-    "difficulty": "Hard",
-    "category": "Euros",
-    "explanation": "Wiltord scored in stoppage time."
+    "en": {
+      "question": "Who coached France at the 1998 World Cup?",
+      "options": [
+        "Aimé Jacquet",
+        "Roger Lemerre",
+        "Michel Hidalgo",
+        "Didier Deschamps"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "Aimé Jacquet was the coach."
+    },
+    "fr": {
+      "question": "Qui était le sélectionneur de la France à la Coupe du monde 1998 ?",
+      "options": [
+        "Aimé Jacquet",
+        "Roger Lemerre",
+        "Michel Hidalgo",
+        "Didier Deschamps"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "Aimé Jacquet était le sélectionneur."
+    }
   },
   {
-    "question": "Who was top scorer at Euro 2016?",
-    "options": [
-      "Antoine Griezmann",
-      "Cristiano Ronaldo",
-      "Olivier Giroud",
-      "Dimitri Payet"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "Euros",
-    "explanation": "Griezmann scored six goals."
+    "en": {
+      "question": "Who scored the winning goal in the 2021 Nations League final?",
+      "options": [
+        "Kylian Mbappé",
+        "Karim Benzema",
+        "Antoine Griezmann",
+        "Paul Pogba"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "Mbappé scored France’s second goal against Spain."
+    },
+    "fr": {
+      "question": "Qui a marqué le but de la victoire en finale de la Ligue des nations 2021 ?",
+      "options": [
+        "Kylian Mbappé",
+        "Karim Benzema",
+        "Antoine Griezmann",
+        "Paul Pogba"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "Kylian Mbappé a inscrit le deuxième but français contre l’Espagne."
+    }
   },
   {
-    "question": "Who scored twice against Germany in the Euro 2016 semi-final?",
-    "options": [
-      "Antoine Griezmann",
-      "Paul Pogba",
-      "Olivier Giroud",
-      "Dimitri Payet"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "Euros",
-    "explanation": "Griezmann scored both goals in a 2–0 win."
+    "en": {
+      "question": "Which team did France beat in the 2021 Nations League final?",
+      "options": [
+        "Spain",
+        "Belgium",
+        "Italy",
+        "Portugal"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "France beat Spain 2–1."
+    },
+    "fr": {
+      "question": "Quelle équipe la France a-t-elle battue en finale de la Ligue des nations 2021 ?",
+      "options": [
+        "Espagne",
+        "Belgique",
+        "Italie",
+        "Portugal"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "La France a battu l’Espagne 2-1."
+    }
   },
   {
-    "question": "Which team beat France in the Euro 2016 final?",
-    "options": [
-      "Portugal",
-      "Germany",
-      "Spain",
-      "Italy"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "Euros",
-    "explanation": "Portugal won 1–0 after extra time."
-  },
-  {
-    "question": "Who scored France’s winner in the 2021 Nations League final?",
-    "options": [
-      "Kylian Mbappé",
-      "Karim Benzema",
-      "Antoine Griezmann",
-      "Paul Pogba"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "Nations League",
-    "explanation": "Mbappé scored the decisive goal against Spain."
-  },
-  {
-    "question": "Which team did France beat in the 2021 Nations League final?",
-    "options": [
-      "Spain",
-      "Belgium",
-      "Italy",
-      "Portugal"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "Nations League",
-    "explanation": "France beat Spain 2–1 in Milan."
-  },
-  {
-    "question": "Who scored France’s equaliser in the 2021 Nations League final?",
-    "options": [
-      "Karim Benzema",
-      "Kylian Mbappé",
-      "Paul Pogba",
-      "Theo Hernandez"
-    ],
-    "answer": 0,
-    "difficulty": "Hard",
-    "category": "Nations League",
-    "explanation": "Benzema curled in the equaliser."
-  },
-  {
-    "question": "At which stadium did France win the 1998 World Cup final?",
-    "options": [
-      "Stade de France",
-      "Parc des Princes",
-      "Stade Vélodrome",
-      "Stade de Gerland"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "Venues",
-    "explanation": "The final was held at the Stade de France."
-  },
-  {
-    "question": "In which city is the Stade de France?",
-    "options": [
-      "Saint-Denis",
-      "Lyon",
-      "Marseille",
-      "Bordeaux"
-    ],
-    "answer": 0,
-    "difficulty": "Hard",
-    "category": "Venues",
-    "explanation": "The stadium is in Saint-Denis, north of Paris."
-  },
-  {
-    "question": "Who coached France to the 1998 World Cup title?",
-    "options": [
-      "Aimé Jacquet",
-      "Didier Deschamps",
-      "Roger Lemerre",
-      "Michel Hidalgo"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "History",
-    "explanation": "Jacquet led the 1998 champions."
-  },
-  {
-    "question": "Who coached France to the Euro 1984 title?",
-    "options": [
-      "Michel Hidalgo",
-      "Aimé Jacquet",
-      "Roger Lemerre",
-      "Gérard Houllier"
-    ],
-    "answer": 0,
-    "difficulty": "Hard",
-    "category": "History",
-    "explanation": "Hidalgo coached the 1984 champions."
-  },
-  {
-    "question": "Who coached France to the Euro 2000 title?",
-    "options": [
-      "Roger Lemerre",
-      "Aimé Jacquet",
-      "Didier Deschamps",
-      "Raymond Domenech"
-    ],
-    "answer": 0,
-    "difficulty": "Hard",
-    "category": "History",
-    "explanation": "Lemerre succeeded Jacquet after 1998."
-  },
-  {
-    "question": "Which goalkeeper captained France to the 2018 World Cup?",
-    "options": [
-      "Hugo Lloris",
-      "Fabien Barthez",
-      "Steve Mandanda",
-      "Mike Maignan"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "World Cup",
-    "explanation": "Lloris was France captain in 2018."
-  },
-  {
-    "question": "Which goalkeeper was France’s first choice at the 1998 World Cup?",
-    "options": [
-      "Fabien Barthez",
-      "Bernard Lama",
-      "Hugo Lloris",
-      "Grégory Coupet"
-    ],
-    "answer": 0,
-    "difficulty": "Hard",
-    "category": "World Cup",
-    "explanation": "Barthez kept goal throughout the knockout rounds."
-  },
-  {
-    "question": "Who scored the only goal against Portugal in the 2006 World Cup semi-final?",
-    "options": [
-      "Zinedine Zidane",
-      "Thierry Henry",
-      "Patrick Vieira",
-      "Franck Ribéry"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "World Cup",
-    "explanation": "Zidane converted a penalty."
-  },
-  {
-    "question": "Who scored the only goal against Brazil in the 2006 World Cup quarter-final?",
-    "options": [
-      "Thierry Henry",
-      "Zinedine Zidane",
-      "Franck Ribéry",
-      "Patrick Vieira"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "World Cup",
-    "explanation": "Henry scored from a Zidane free-kick."
-  },
-  {
-    "question": "Who was named best player of the 2006 World Cup?",
-    "options": [
-      "Zinedine Zidane",
-      "Thierry Henry",
-      "Fabio Cannavaro",
-      "Andrea Pirlo"
-    ],
-    "answer": 0,
-    "difficulty": "Hard",
-    "category": "World Cup",
-    "explanation": "Zidane won the Golden Ball."
-  },
-  {
-    "question": "Which country beat France in the 2006 World Cup final?",
-    "options": [
-      "Italy",
-      "Brazil",
-      "Germany",
-      "Portugal"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "World Cup",
-    "explanation": "Italy won the penalty shoot-out."
-  },
-  {
-    "question": "Who scored France’s goal in the 2006 World Cup final?",
-    "options": [
-      "Zinedine Zidane",
-      "Thierry Henry",
-      "Franck Ribéry",
-      "David Trezeguet"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "World Cup",
-    "explanation": "Zidane scored an early Panenka penalty."
-  },
-  {
-    "question": "France’s first men’s international was played in which year?",
-    "options": [
-      "1904",
-      "1898",
-      "1910",
-      "1920"
-    ],
-    "answer": 0,
-    "difficulty": "Hard",
-    "category": "History",
-    "explanation": "France drew 3–3 with Belgium in 1904."
-  },
-  {
-    "question": "Which competition did France win in 2001 and 2003?",
-    "options": [
-      "FIFA Confederations Cup",
-      "UEFA Nations League",
-      "Olympic football tournament",
-      "Artemio Franchi Cup"
-    ],
-    "answer": 0,
-    "difficulty": "Hard",
-    "category": "History",
-    "explanation": "France won consecutive Confederations Cups."
-  },
-  {
-    "question": "Who scored France’s first goal in the 2018 World Cup final?",
-    "options": [
-      "Mario Mandžukić own goal",
-      "Antoine Griezmann",
-      "Paul Pogba",
-      "Kylian Mbappé"
-    ],
-    "answer": 0,
-    "difficulty": "Hard",
-    "category": "World Cup",
-    "explanation": "Mandžukić headed Griezmann’s free-kick into his own net."
-  },
-  {
-    "question": "Which France player scored in both the 2018 and 2022 World Cup finals?",
-    "options": [
-      "Kylian Mbappé",
-      "Antoine Griezmann",
-      "Olivier Giroud",
-      "Paul Pogba"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "World Cup",
-    "explanation": "Mbappé scored once in 2018 and three times in 2022."
-  },
-  {
-    "question": "How many goals did France score in the 2018 World Cup final?",
-    "options": [
-      "Four",
-      "Three",
-      "Five",
-      "Two"
-    ],
-    "answer": 0,
-    "difficulty": "Medium",
-    "category": "World Cup",
-    "explanation": "France defeated Croatia 4–2."
+    "en": {
+      "question": "How many goals did Just Fontaine score at the 1958 World Cup?",
+      "options": [
+        "13",
+        "11",
+        "10",
+        "9"
+      ],
+      "answer": 0,
+      "difficulty": "Medium",
+      "category": "France",
+      "explanation": "Fontaine scored 13 goals."
+    },
+    "fr": {
+      "question": "Combien de buts Just Fontaine a-t-il marqués à la Coupe du monde 1958 ?",
+      "options": [
+        "13",
+        "11",
+        "10",
+        "9"
+      ],
+      "answer": 0,
+      "difficulty": "Moyen",
+      "category": "France",
+      "explanation": "Just Fontaine a marqué 13 buts."
+    }
   }
 ];
+window.QUIZ_QUESTIONS=BILINGUAL_QUIZ.map(q=>FR_MODE?q.fr:q.en);
